@@ -8,7 +8,7 @@ func _process(delta):
 	
 	#Player movement
 	var direction = Input.get_vector("moveLeft", "moveRight", "moveUp", "moveDown")
-	position += direction * 500 * delta
+	position += direction * 200 * delta
 	
 	#Player flip horizontally
 	var isLeft = direction.x < 0
