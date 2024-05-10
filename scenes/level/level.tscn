@@ -13,6 +13,7 @@ z_index = 5
 position = Vector2(522, 284)
 
 [node name="PointLight2D" type="PointLight2D" parent="Player"]
+position = Vector2(0, -288)
 texture = ExtResource("4_86j28")
 texture_scale = 10.0
 
