@@ -29,5 +29,3 @@ blend_mode = 1
 
 [node name="TileMap" parent="." instance=ExtResource("4_eklwn")]
 position = Vector2(-1182, 387)
-
-[connection signal="shoot" from="Player" to="." method="_on_player_shoot"]

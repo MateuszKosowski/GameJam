@@ -1,0 +1,359 @@
+[gd_scene load_steps=12 format=3 uid="uid://cl6xhaf6us5r3"]
+
+[ext_resource type="Texture2D" uid="uid://dy84tab518kdy" path="res://graphics/background_cutscene.png" id="2_ixj28"]
+[ext_resource type="Texture2D" uid="uid://c63sksw3axo" path="res://graphics/cross.png" id="3_2so18"]
+[ext_resource type="FontFile" uid="uid://cmqdsxfon1ifi" path="res://fonts/EightBitDragon-anqx.ttf" id="4_n4ogk"]
+
+[sub_resource type="GDScript" id="GDScript_imgtt"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	$AnimationPlayer.play(\"up_and_down\")
+	$AnimationPlayer2.play(\"animate_enter\")
+	$AnimationPlayer2.queue(\"text_animate\")
+"
+
+[sub_resource type="Animation" id="Animation_4rqf7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(664, 324)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Panel/Text1:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(893, 40)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Panel/Text1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, 2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Panel/Text2:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(893, 27)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Panel/Text2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, 41)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Panel/Text3:size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(893, 27)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Panel/Text3:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, 69)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Panel:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-27, 653)]
+}
+
+[sub_resource type="Animation" id="Animation_qf2jl"]
+resource_name = "animate_enter"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-27, 733), Vector2(-27, 596)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Panel/Text1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, 5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Panel/Text2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, 50)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Panel/Text3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, 83)]
+}
+
+[sub_resource type="Animation" id="Animation_wol1w"]
+resource_name = "text_animate"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Panel/Text1:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(893, 40), Vector2(5, 40)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Panel/Text1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(34, 4), Vector2(922, 2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Panel/Text2:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.2, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(893, 27), Vector2(0, 27)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Panel/Text2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.2, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(34, 48), Vector2(927, 48)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Panel/Text3:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.4, 3.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(893, 27), Vector2(11, 27)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Panel/Text3:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.4, 3.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(33.9999, 81), Vector2(916, 81)]
+}
+
+[sub_resource type="Animation" id="Animation_oep2e"]
+resource_name = "up_and_down"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(664, 324), Vector2(664, 314), Vector2(664, 314.667), Vector2(664, 324)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5sety"]
+_data = {
+"RESET": SubResource("Animation_4rqf7"),
+"animate_enter": SubResource("Animation_qf2jl"),
+"text_animate": SubResource("Animation_wol1w"),
+"up_and_down": SubResource("Animation_oep2e")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgk8a"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_keuug"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="cutscena" type="Node2D"]
+script = SubResource("GDScript_imgtt")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(641.196, 367.25)
+scale = Vector2(1.14889, 1.14889)
+texture = ExtResource("2_ixj28")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Cross")
+libraries = {
+"": SubResource("AnimationLibrary_5sety")
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Cross")
+libraries = {
+"": SubResource("AnimationLibrary_5sety")
+}
+
+[node name="Cross" type="Sprite2D" parent="."]
+position = Vector2(664, 324)
+scale = Vector2(2.1625, 2.1625)
+texture = ExtResource("3_2so18")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -27.0
+offset_top = 653.0
+offset_right = 1307.0
+offset_bottom = 854.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sgk8a")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 18.0
+offset_right = 1172.0
+offset_bottom = 121.0
+theme_override_fonts/normal_font = ExtResource("4_n4ogk")
+theme_override_font_sizes/normal_font_size = 25
+text = "HELLO EXORCIST,"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 51.0
+offset_right = 1172.0
+offset_bottom = 154.0
+theme_override_fonts/normal_font = ExtResource("4_n4ogk")
+theme_override_font_sizes/normal_font_size = 25
+text = "YOUR MISSION IS TO EXTERMINATE ALL BAD GHOSTS IN THE AREA."
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 84.0
+offset_right = 1172.0
+offset_bottom = 187.0
+theme_override_fonts/normal_font = ExtResource("4_n4ogk")
+theme_override_font_sizes/normal_font_size = 25
+text = "HERE... THESE WEAPONS MIGHT USEFULL."
+
+[node name="Text1" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 2.0
+offset_right = 927.0
+offset_bottom = 42.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_keuug")
+
+[node name="Text2" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 41.0
+offset_right = 927.0
+offset_bottom = 68.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_keuug")
+
+[node name="Text3" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 69.0
+offset_right = 927.0
+offset_bottom = 96.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_keuug")
