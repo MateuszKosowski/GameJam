@@ -11,7 +11,11 @@ config_version=5
 [application]
 
 config/name="GameJam"
+<<<<<<< Updated upstream
 run/main_scene="res://scenes/level/level.tscn"
+=======
+run/main_scene="res://scenes/level.tscn"
+>>>>>>> Stashed changes
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
