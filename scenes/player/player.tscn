@@ -1,20 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://bn7n3h61efd5g"]
+[gd_scene load_steps=7 format=3 uid="uid://bn7n3h61efd5g"]
 
-[ext_resource type="Texture2D" uid="uid://c0jck1ivoep4y" path="res://graphics/playerHolder.png" id="1_2iaxw"]
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_e4hbn"]
-[ext_resource type="Texture2D" uid="uid://nxcdxxbo3ksi" path="res://graphics/playerHolder2.png" id="2_0f6s6"]
+[ext_resource type="Texture2D" uid="uid://1fq1xmd6bbni" path="res://graphics/priest/IMG_1951.PNG" id="2_k72v2"]
+[ext_resource type="Texture2D" uid="uid://un55krqmxma4" path="res://graphics/priest/IMG_1953.PNG" id="3_1oalf"]
+[ext_resource type="Texture2D" uid="uid://htyomk7sx3vf" path="res://graphics/priest/IMG_1955.PNG" id="4_0pvli"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7iori"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_2iaxw")
+"texture": ExtResource("2_k72v2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_0f6s6")
+"texture": ExtResource("3_1oalf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_2iaxw")
+"texture": ExtResource("4_0pvli")
 }],
 "loop": true,
 "name": &"default",
@@ -25,12 +26,12 @@ animations = [{
 radius = 87.0919
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.25, 0.25)
 script = ExtResource("1_e4hbn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7iori")
 autoplay = "default"
-frame = 1
 frame_progress = 0.0917542
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
