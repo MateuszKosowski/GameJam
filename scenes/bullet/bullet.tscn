@@ -20,8 +20,8 @@ shape = SubResource("CircleShape2D_vwu65")
 texture = ExtResource("2_rl8tr")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-energy = 5.0
+energy = 3.0
 texture = ExtResource("3_n8lfm")
-texture_scale = 2.0
+texture_scale = 15.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
