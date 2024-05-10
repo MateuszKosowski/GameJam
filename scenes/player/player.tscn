@@ -26,7 +26,7 @@ animations = [{
 radius = 264.0
 height = 1152.0
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.05, 0.05)
 script = ExtResource("1_e4hbn")
 
@@ -35,14 +35,14 @@ sprite_frames = SubResource("SpriteFrames_7iori")
 autoplay = "default"
 frame_progress = 0.0917542
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
 position = Vector2(48, -76)
 shape = SubResource("CapsuleShape2D_26k4m")
 
 [node name="ShootReloadTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="ShootPos" type="Node2D" parent="." groups=["player"]]
+[node name="ShootPos" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="ShootPos"]
 position = Vector2(560, -184)

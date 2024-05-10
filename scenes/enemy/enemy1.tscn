@@ -16,15 +16,14 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_26k4m"]
-radius = 164.0
-height = 336.0
+radius = 264.0
+height = 1152.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e2lu6"]
-radius = 1269.99
 
-[node name="enemy" type="CharacterBody2D" groups=["enemy"]]
+[node name="enemy" type="CharacterBody2D"]
 z_index = 5
-position = Vector2(0, 1)
+position = Vector2(522, 284)
 scale = Vector2(0.25, 0.25)
 script = ExtResource("1_jvbon")
 
@@ -34,6 +33,7 @@ autoplay = "default"
 frame_progress = 0.0917542
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(48, -76)
 shape = SubResource("CapsuleShape2D_26k4m")
 
 [node name="ShootReloadTimer" type="Timer" parent="."]
@@ -42,7 +42,7 @@ one_shot = true
 [node name="ShootPos" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="ShootPos"]
-position = Vector2(0, -4)
+position = Vector2(560, -184)
 scale = Vector2(129.5, -201)
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -56,10 +56,6 @@ script = ExtResource("3_3kvcm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AI/PlayerDetectionZone"]
 shape = SubResource("CircleShape2D_e2lu6")
-one_way_collision_margin = 0.0
 
 [connection signal="timeout" from="ShootReloadTimer" to="." method="_on_shoot_reload_timer_timeout"]
-[connection signal="timeout" from="ShootReloadTimer" to="AI" method="_on_shoot_reload_timer_timeout"]
-[connection signal="shoot" from="AI" to="." method="_on_ai_shoot"]
 [connection signal="body_entered" from="AI/PlayerDetectionZone" to="." method="_on_player_detection_zone_body_entered"]
-[connection signal="body_entered" from="AI/PlayerDetectionZone" to="AI" method="_on_player_detection_zone_body_entered"]
