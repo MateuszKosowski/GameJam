@@ -18,6 +18,9 @@ position = Vector2(522, 284)
 [node name="PointLight2D" type="PointLight2D" parent="Player"]
 texture = ExtResource("4_86j28")
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true
+
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 energy = 0.9
 blend_mode = 1
