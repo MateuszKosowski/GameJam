@@ -28,7 +28,6 @@ height = 1152.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(0.05, 0.05)
-collision_layer = 2
 script = ExtResource("1_e4hbn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
