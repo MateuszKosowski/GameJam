@@ -25,6 +25,7 @@ energy = 0.9
 blend_mode = 1
 
 [node name="Bullets" type="Node2D" parent="."]
+
 [node name="TileMap" parent="." instance=ExtResource("4_eklwn")]
 position = Vector2(-1182, 387)
 

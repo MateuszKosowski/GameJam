@@ -22,8 +22,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_x5nru"]
-radius = 87.0919
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_26k4m"]
+radius = 264.0
+height = 1152.0
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.25, 0.25)
@@ -35,7 +36,8 @@ autoplay = "default"
 frame_progress = 0.0917542
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_x5nru")
+position = Vector2(48, -76)
+shape = SubResource("CapsuleShape2D_26k4m")
 
 [node name="ShootReloadTimer" type="Timer" parent="."]
 one_shot = true
@@ -43,7 +45,7 @@ one_shot = true
 [node name="ShootPos" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="ShootPos"]
-position = Vector2(138, 104)
+position = Vector2(560, -184)
 scale = Vector2(129.5, -201)
 
 [connection signal="timeout" from="ShootReloadTimer" to="." method="_on_shoot_reload_timer_timeout"]
