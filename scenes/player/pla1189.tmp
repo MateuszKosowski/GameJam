@@ -29,13 +29,13 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 10.0,
+"duration": 1.0,
 "texture": ExtResource("5_m24gg")
 }, {
-"duration": 10.0,
+"duration": 1.0,
 "texture": ExtResource("6_6m4ex")
 }, {
-"duration": 10.0,
+"duration": 1.0,
 "texture": ExtResource("7_ei65i")
 }],
 "loop": true,
