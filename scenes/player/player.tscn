@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bn7n3h61efd5g"]
+
+[ext_resource type="Texture2D" uid="uid://c0jck1ivoep4y" path="res://graphics/playerHolder.png" id="1_2iaxw"]
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_e4hbn"]
+[ext_resource type="Texture2D" uid="uid://nxcdxxbo3ksi" path="res://graphics/playerHolder2.png" id="2_0f6s6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7iori"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2iaxw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0f6s6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_2iaxw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x5nru"]
+radius = 87.0919
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_e4hbn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7iori")
+autoplay = "default"
+frame = 1
+frame_progress = 0.0917542
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x5nru")
