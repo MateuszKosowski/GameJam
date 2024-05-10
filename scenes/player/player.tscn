@@ -35,3 +35,14 @@ frame_progress = 0.0917542
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_x5nru")
+
+[node name="ShootReloadTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ShootPos" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="ShootPos"]
+position = Vector2(138, 104)
+scale = Vector2(129.5, -201)
+
+[connection signal="timeout" from="ShootReloadTimer" to="." method="_on_shoot_reload_timer_timeout"]
