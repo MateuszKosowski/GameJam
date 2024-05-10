@@ -1,10 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://bygi8xi6bv4y2"]
+[gd_scene load_steps=5 format=3 uid="uid://bygi8xi6bv4y2"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_avm3s"]
 [ext_resource type="PackedScene" uid="uid://bn7n3h61efd5g" path="res://scenes/player/player.tscn" id="2_3j6en"]
+[ext_resource type="Texture2D" uid="uid://cwny8r5wyf3ip" path="res://graphics/stones.png" id="2_srncd"]
+[ext_resource type="Texture2D" uid="uid://c603vl0sbxibr" path="res://graphics/circle.png" id="4_86j28"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_avm3s")
 
+[node name="Stones" type="Sprite2D" parent="."]
+position = Vector2(562, 307)
+texture = ExtResource("2_srncd")
+
 [node name="Player" parent="." instance=ExtResource("2_3j6en")]
 position = Vector2(522, 284)
+
+[node name="PointLight2D" type="PointLight2D" parent="Player"]
+texture = ExtResource("4_86j28")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+energy = 0.9
+blend_mode = 1
