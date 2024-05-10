@@ -8,7 +8,11 @@ func _process(delta):
 	
 	#Player movement
 	var direction = Input.get_vector("moveLeft", "moveRight", "moveUp", "moveDown")
-	position += direction * 500 * delta
+	position += direction * 200 * delta
+	
+	#Player flip horizontally
+	var isLeft = direction.x < 0
+	$AnimatedSprite2D.flip_h=isLeft
 	
 	#Player shooting
 	if Input.is_action_pressed("shootUp") and canShoot:
@@ -24,7 +28,6 @@ func _process(delta):
 		canShoot = false
 		$ShootReloadTimer.start()
 		shoot.emit(selectedShootPos.global_position, shootDirection)
-	
 
 # Reload canShoot
 func _on_shoot_reload_timer_timeout():
