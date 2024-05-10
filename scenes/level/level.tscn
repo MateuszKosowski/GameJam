@@ -34,8 +34,9 @@ position = Vector2(-1182, 387)
 [node name="RemoveBullet" type="Timer" parent="."]
 one_shot = true
 
-[node name="Player2" parent="." instance=ExtResource("5_xo137")]
-position = Vector2(989, 270)
+[node name="enemy" parent="." instance=ExtResource("5_xo137")]
+position = Vector2(609, 197)
 
 [connection signal="shoot" from="Player" to="." method="_on_player_shoot"]
 [connection signal="timeout" from="RemoveBullet" to="." method="_on_remove_bullet_timeout"]
+[connection signal="shoot" from="enemy" to="." method="_on_enemy_shoot"]
