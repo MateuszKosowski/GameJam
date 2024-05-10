@@ -28,6 +28,7 @@ radius = 87.0919
 script = ExtResource("1_e4hbn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 5
 sprite_frames = SubResource("SpriteFrames_7iori")
 autoplay = "default"
 frame = 1

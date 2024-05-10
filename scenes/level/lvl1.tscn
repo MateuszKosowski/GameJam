@@ -1,11 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bygi8xi6bv4y2"]
+[gd_scene load_steps=6 format=3 uid="uid://ghvjffnyuea1"]
 
-[ext_resource type="Script" path="res://scenes/level/level.gd" id="1_avm3s"]
-[ext_resource type="PackedScene" uid="uid://bn7n3h61efd5g" path="res://scenes/player/player.tscn" id="2_3j6en"]
-[ext_resource type="Texture2D" uid="uid://dpph6jbo67bpm" path="res://graphics/tilemapplaceholder.png" id="3_fg5ij"]
+[ext_resource type="Script" path="res://scenes/level/level.gd" id="1_c8yi8"]
+[ext_resource type="PackedScene" uid="uid://bn7n3h61efd5g" path="res://scenes/player/player.tscn" id="2_24pnf"]
+[ext_resource type="Texture2D" uid="uid://dpph6jbo67bpm" path="res://graphics/tilemapplaceholder.png" id="3_gsptn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v7kun"]
-texture = ExtResource("3_fg5ij")
+texture = ExtResource("3_gsptn")
 texture_region_size = Vector2i(300, 300)
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -3264,9 +3264,9 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_v7kun")
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_avm3s")
+script = ExtResource("1_c8yi8")
 
-[node name="Player" parent="." instance=ExtResource("2_3j6en")]
+[node name="Player" parent="." instance=ExtResource("2_24pnf")]
 z_index = 5
 position = Vector2(3302, -748)
 
