@@ -5,10 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://un55krqmxma4" path="res://graphics/priest/IMG_1953.PNG" id="3_1oalf"]
 [ext_resource type="Texture2D" uid="uid://htyomk7sx3vf" path="res://graphics/priest/IMG_1955.PNG" id="4_0pvli"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_26k4m"]
-radius = 264.0
-height = 1152.0
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_7iori"]
 animations = [{
 "frames": [{
@@ -31,13 +27,8 @@ radius = 264.0
 height = 1152.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-[node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.05, 0.05)
 script = ExtResource("1_e4hbn")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
-position = Vector2(48, -76)
-shape = SubResource("CapsuleShape2D_26k4m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7iori")
