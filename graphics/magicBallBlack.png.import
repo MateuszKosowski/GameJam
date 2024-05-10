@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1ihom173uh78"
-path="res://.godot/imported/bulletHolder.png-5ee9b42f5ce18331bd918d4ea4fa8a66.ctex"
+uid="uid://bxqlls8126dya"
+path="res://.godot/imported/magicBallBlack.png-888ceb5159d892125c4a98bd226f560c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/bulletHolder.png"
-dest_files=["res://.godot/imported/bulletHolder.png-5ee9b42f5ce18331bd918d4ea4fa8a66.ctex"]
+source_file="res://graphics/magicBallBlack.png"
+dest_files=["res://.godot/imported/magicBallBlack.png-888ceb5159d892125c4a98bd226f560c.ctex"]
 
 [params]
 
