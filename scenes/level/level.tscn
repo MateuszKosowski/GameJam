@@ -29,3 +29,9 @@ blend_mode = 1
 
 [node name="TileMap" parent="." instance=ExtResource("4_eklwn")]
 position = Vector2(-1182, 387)
+
+[node name="RemoveBullet" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="shoot" from="Player" to="." method="_on_player_shoot"]
+[connection signal="timeout" from="RemoveBullet" to="." method="_on_remove_bullet_timeout"]
