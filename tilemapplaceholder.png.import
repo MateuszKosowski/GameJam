@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1ihom173uh78"
-path="res://.godot/imported/bulletHolder.png-5ee9b42f5ce18331bd918d4ea4fa8a66.ctex"
+uid="uid://cwxyvdhn20oaq"
+path="res://.godot/imported/tilemapplaceholder.png-7d17bc79ccbd690e969790423b6ecd6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/bulletHolder.png"
-dest_files=["res://.godot/imported/bulletHolder.png-5ee9b42f5ce18331bd918d4ea4fa8a66.ctex"]
+source_file="res://tilemapplaceholder.png"
+dest_files=["res://.godot/imported/tilemapplaceholder.png-7d17bc79ccbd690e969790423b6ecd6f.ctex"]
 
 [params]
 

@@ -2,27 +2,32 @@
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_avm3s"]
 [ext_resource type="PackedScene" uid="uid://bn7n3h61efd5g" path="res://scenes/player/player.tscn" id="2_3j6en"]
-[ext_resource type="Texture2D" uid="uid://cwny8r5wyf3ip" path="res://graphics/stones.png" id="2_srncd"]
 [ext_resource type="Texture2D" uid="uid://c603vl0sbxibr" path="res://graphics/circle.png" id="4_86j28"]
+[ext_resource type="PackedScene" uid="uid://b0d74bhrtr4nf" path="res://scenes/tilemap/tile_map.tscn" id="4_eklwn"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_avm3s")
 
-[node name="Stones" type="Sprite2D" parent="."]
-position = Vector2(562, 307)
-texture = ExtResource("2_srncd")
-
 [node name="Player" parent="." instance=ExtResource("2_3j6en")]
+z_index = 5
 position = Vector2(522, 284)
 
 [node name="PointLight2D" type="PointLight2D" parent="Player"]
+position = Vector2(0, -288)
 texture = ExtResource("4_86j28")
+texture_scale = 10.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 energy = 0.9
 blend_mode = 1
 
-[node name="tets" type="Node2D" parent="."]
+[node name="Bullets" type="Node2D" parent="."]
+
+[node name="TileMap" parent="." instance=ExtResource("4_eklwn")]
+position = Vector2(-1182, 387)
+
+[connection signal="shoot" from="Player" to="." method="_on_player_shoot"]
