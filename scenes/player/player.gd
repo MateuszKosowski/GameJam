@@ -37,7 +37,11 @@ func _process(delta):
 		
 		#$AnimatedSprite2D.play("default")
 		#$AnimatedSprite2D.animation_looped
-	
+	if $Camera2D/ReloadBar/TextureProgressBar.value == 100:
+		$Camera2D/ReloadBar.visible = false
+	else:
+		$Camera2D/ReloadBar.visible = true
+		
 	#Player shooting
 	if Input.is_action_pressed("shootUp") and canShoot and !charging_active:
 		shootDirection = Vector2.UP
