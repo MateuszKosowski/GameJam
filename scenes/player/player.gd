@@ -62,8 +62,10 @@ func _on_shoot_reload_timer_timeout():
 	canShoot = true
 	
 func handle_hit():
+	if hp <= 0:
+		pass
 	hp -= 1
-	print(hp)
+	$Camera2D/UI/AnimatedSprite2D.frame += 1
 
 func _on_charging_time_timeout():
 	print("Charging Time over")
