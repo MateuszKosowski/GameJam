@@ -5,6 +5,7 @@ var bullet_scane: PackedScene = preload("res://scenes/bullet/bullet.tscn")
 var bulletenemy_scane: PackedScene = preload("res://scenes/bullet/bulletenemy.tscn")
 var nenemy_scane: PackedScene = preload("res://scenes/enemy/enemy1.tscn")
 var player_scane: PackedScene = preload("res://scenes/player/player.tscn")
+@export var player : Node2D
 
 func _on_player_shoot(bulletPosition, bulletDirection):
 	var bullet = bullet_scane.instantiate() as Area2D
@@ -38,3 +39,84 @@ func _on_mob_spawner_spawn_mob(where, player_scane):
 	pass # Replace with function body.
 
 
+
+
+func _on_lantern_player_in_light(playr):
+	player.in_light = true
+	pass # Replace with function body.
+
+
+func _on_lantern_2_player_in_light(playr):
+	player.in_light = true
+	
+	pass # Replace with function body.
+
+
+func _on_lantern_3_player_in_light(playr):
+	player.in_light = true
+	pass # Replace with function body.
+
+
+func _on_lantern_4_player_in_light(playr):
+	player.in_light = true
+	pass # Replace with function body.
+
+
+func _on_lantern_5_player_in_light(playr):
+	player.in_light = true
+	pass # Replace with function body.
+
+
+func _on_lantern_6_player_in_light(playr):
+	player.in_light = true
+	pass # Replace with function body.
+
+
+func _on_lantern_7_player_in_light(playr):
+	player.in_light = true
+	pass # Replace with function body.
+
+
+func _on_lantern_8_player_in_light(playr):
+	player.in_light = true
+	pass # Replace with function body.
+
+
+func _on_lantern_player_out_light(playr):
+	player.in_light = false
+	pass # Replace with function body.
+
+
+func _on_lantern_2_player_out_light(playr):
+	player.in_light = false
+	pass # Replace with function body.
+
+
+func _on_lantern_3_player_out_light(playr):
+	player.in_light = false
+	pass # Replace with function body.
+
+
+func _on_lantern_4_player_out_light(playr):
+	player.in_light = false
+	pass # Replace with function body.
+
+
+func _on_lantern_5_player_out_light(playr):
+	player.in_light = false
+	pass # Replace with function body.
+
+
+func _on_lantern_6_player_out_light(playr):
+	player.in_light = false
+	pass # Replace with function body.
+
+
+func _on_lantern_7_player_out_light(playr):
+	player.in_light = false
+	pass # Replace with function body.
+
+
+func _on_lantern_8_player_out_light(playr):
+	player.in_light = false
+	pass # Replace with function body.
