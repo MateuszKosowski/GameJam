@@ -134,7 +134,7 @@ one_shot = true
 position = Vector2(0, 0.000488281)
 zoom = Vector2(2, 2)
 limit_left = -1373
-limit_top = -765
+limit_top = -1981
 limit_right = 2210
 limit_bottom = 772
 position_smoothing_enabled = true
@@ -143,6 +143,7 @@ position_smoothing_enabled = true
 position = Vector2(0, -1120)
 
 [node name="Progressbar" parent="Camera2D" instance=ExtResource("11_1bdin")]
+z_index = 5
 position = Vector2(0, 739.999)
 scale = Vector2(4, 4)
 

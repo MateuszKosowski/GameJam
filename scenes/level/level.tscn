@@ -9,10 +9,17 @@
 script = ExtResource("1_avm3s")
 
 [node name="Player" parent="." instance=ExtResource("2_3j6en")]
+<<<<<<< Updated upstream
 position = Vector2(522, 284)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 energy = 0.9
+=======
+position = Vector2(414, 599)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
+>>>>>>> Stashed changes
 blend_mode = 1
 
 [node name="Bullets" type="Node2D" parent="."]
