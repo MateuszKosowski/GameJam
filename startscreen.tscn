@@ -1,0 +1,93 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdi6uhjyjui52"]
+
+[ext_resource type="Script" path="res://scenes/deathscreen/deathscreen.gd" id="1_t703v"]
+[ext_resource type="FontFile" uid="uid://cmqdsxfon1ifi" path="res://fonts/EightBitDragon-anqx.ttf" id="2_eub3a"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_073to"]
+specular_color = Color(0, 0, 0, 1)
+
+[node name="startscreen" type="Node2D"]
+script = ExtResource("1_t703v")
+
+[node name="backgroundd" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(729.5, 357.5)
+scale = Vector2(1545, 767)
+texture = SubResource("CanvasTexture_073to")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 368.0
+offset_top = 17.0
+offset_right = 1502.0
+offset_bottom = 120.0
+theme_override_fonts/normal_font = ExtResource("2_eub3a")
+theme_override_font_sizes/normal_font_size = 100
+text = "PROVIDENCE"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 580.0
+offset_top = 128.0
+offset_right = 1714.0
+offset_bottom = 231.0
+theme_override_fonts/normal_font = ExtResource("2_eub3a")
+theme_override_font_sizes/normal_font_size = 100
+text = "AND"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+offset_left = 385.0
+offset_top = 239.0
+offset_right = 1519.0
+offset_bottom = 342.0
+theme_override_fonts/normal_font = ExtResource("2_eub3a")
+theme_override_font_sizes/normal_font_size = 100
+text = "LUMINENCE"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_start" type="Button" parent="."]
+offset_left = 229.0
+offset_top = 466.0
+offset_right = 528.0
+offset_bottom = 541.0
+
+[node name="text_start" type="RichTextLabel" parent="Button_start"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.68227
+anchor_top = -1.50667
+anchor_right = -1.68227
+anchor_bottom = -1.50667
+offset_left = 581.0
+offset_top = 128.0
+offset_right = 1715.0
+offset_bottom = 231.0
+theme_override_fonts/normal_font = ExtResource("2_eub3a")
+theme_override_font_sizes/normal_font_size = 50
+text = "PLAY"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_exit" type="Button" parent="."]
+offset_left = 835.0
+offset_top = 466.0
+offset_right = 1134.0
+offset_bottom = 541.0
+
+[node name="test_exit" type="RichTextLabel" parent="Button_exit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.66556
+anchor_top = -1.49333
+anchor_right = -1.66556
+anchor_bottom = -1.49333
+offset_left = 581.0
+offset_top = 128.0
+offset_right = 1715.0
+offset_bottom = 231.0
+theme_override_fonts/normal_font = ExtResource("2_eub3a")
+theme_override_font_sizes/normal_font_size = 50
+text = "EXIT"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Button_start" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="Button_exit" to="." method="_on_button_exit_pressed"]

@@ -9,8 +9,9 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ekkrk"]
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_avm3s")
+player = NodePath("Player")
 
 [node name="Player" parent="." instance=ExtResource("2_3j6en")]
 position = Vector2(421, 568)
@@ -43,28 +44,30 @@ player = NodePath("../Player")
 position = Vector2(404, 770)
 shape = SubResource("WorldBoundaryShape2D_ekkrk")
 
-[node name="lantern" parent="." instance=ExtResource("5_ixwxy")]
+[node name="Lanterns" type="Node" parent="."]
+
+[node name="lantern" parent="Lanterns" instance=ExtResource("5_ixwxy")]
 position = Vector2(194, -529)
 
-[node name="lantern2" parent="." instance=ExtResource("5_ixwxy")]
+[node name="lantern2" parent="Lanterns" instance=ExtResource("5_ixwxy")]
 position = Vector2(641, -530)
 
-[node name="lantern3" parent="." instance=ExtResource("5_ixwxy")]
+[node name="lantern3" parent="Lanterns" instance=ExtResource("5_ixwxy")]
 position = Vector2(588, 449)
 
-[node name="lantern4" parent="." instance=ExtResource("5_ixwxy")]
+[node name="lantern4" parent="Lanterns" instance=ExtResource("5_ixwxy")]
 position = Vector2(2, -1053)
 
-[node name="lantern5" parent="." instance=ExtResource("5_ixwxy")]
+[node name="lantern5" parent="Lanterns" instance=ExtResource("5_ixwxy")]
 position = Vector2(-828, -1706)
 
-[node name="lantern6" parent="." instance=ExtResource("5_ixwxy")]
+[node name="lantern6" parent="Lanterns" instance=ExtResource("5_ixwxy")]
 position = Vector2(1627, 361)
 
-[node name="lantern7" parent="." instance=ExtResource("5_ixwxy")]
+[node name="lantern7" parent="Lanterns" instance=ExtResource("5_ixwxy")]
 position = Vector2(932, 302)
 
-[node name="lantern8" parent="." instance=ExtResource("5_ixwxy")]
+[node name="lantern8" parent="Lanterns" instance=ExtResource("5_ixwxy")]
 position = Vector2(-287, 312)
 
 [node name="mob_spawner" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_4hce8")]
@@ -112,4 +115,20 @@ player = NodePath("../Player")
 [connection signal="shoot" from="Player" to="." method="_on_player_shoot"]
 [connection signal="timeout" from="RemoveBullet" to="." method="_on_remove_bullet_timeout"]
 [connection signal="shoot" from="enemy" to="." method="_on_enemy_shoot"]
+[connection signal="playerInLight" from="Lanterns/lantern" to="." method="_on_lantern_player_in_light"]
+[connection signal="playerOutLight" from="Lanterns/lantern" to="." method="_on_lantern_player_out_light"]
+[connection signal="playerInLight" from="Lanterns/lantern2" to="." method="_on_lantern_2_player_in_light"]
+[connection signal="playerOutLight" from="Lanterns/lantern2" to="." method="_on_lantern_2_player_out_light"]
+[connection signal="playerInLight" from="Lanterns/lantern3" to="." method="_on_lantern_3_player_in_light"]
+[connection signal="playerOutLight" from="Lanterns/lantern3" to="." method="_on_lantern_3_player_out_light"]
+[connection signal="playerInLight" from="Lanterns/lantern4" to="." method="_on_lantern_4_player_in_light"]
+[connection signal="playerOutLight" from="Lanterns/lantern4" to="." method="_on_lantern_4_player_out_light"]
+[connection signal="playerInLight" from="Lanterns/lantern5" to="." method="_on_lantern_5_player_in_light"]
+[connection signal="playerOutLight" from="Lanterns/lantern5" to="." method="_on_lantern_5_player_out_light"]
+[connection signal="playerInLight" from="Lanterns/lantern6" to="." method="_on_lantern_6_player_in_light"]
+[connection signal="playerOutLight" from="Lanterns/lantern6" to="." method="_on_lantern_6_player_out_light"]
+[connection signal="playerInLight" from="Lanterns/lantern7" to="." method="_on_lantern_7_player_in_light"]
+[connection signal="playerOutLight" from="Lanterns/lantern7" to="." method="_on_lantern_7_player_out_light"]
+[connection signal="playerInLight" from="Lanterns/lantern8" to="." method="_on_lantern_8_player_in_light"]
+[connection signal="playerOutLight" from="Lanterns/lantern8" to="." method="_on_lantern_8_player_out_light"]
 [connection signal="spawnMob" from="mob_spawner" to="." method="_on_mob_spawner_spawn_mob"]

@@ -11,11 +11,10 @@ var chargetime = 2
 var take_shadow_dmg = false
 var in_light = false
 
+
 signal shoot(bulletPosition, bulletDirection)
 
 func _process(delta):
-	
-	
 	#Player movement
 	var direction = Input.get_vector("moveLeft", "moveRight", "moveUp", "moveDown")
 	if charging_active: 
@@ -68,17 +67,19 @@ func _process(delta):
 	if $PointLight2D2.get_texture_scale() <= 1.6 && $RadiusActiveTimer.is_stopped():
 		get_tree().create_tween().tween_property($PointLight2D2,"texture_scale", 0, 0.1)
 		if $DeathByShadowTimer.is_stopped() and !take_shadow_dmg:
-			print("chuuuuuj")
 			$DeathByShadowTimer.start()
 			
 	if take_shadow_dmg:
 		resolve_dmg()
 		
 func resolve_dmg():
+	if in_light:
+		take_shadow_dmg = false
+		return
 	if not $ChargingTime.is_stopped():
 		take_shadow_dmg = false
 		return
-	elif not in_light:
+	if not in_light:
 		lose_hp()
 		take_shadow_dmg = false
 
@@ -109,3 +110,7 @@ func _on_death_by_shadow_timer_timeout():
 func lose_hp():
 	hp -= 1
 	$Camera2D/UI/AnimatedSprite2D.frame += 1	
+
+
+func _on_lantern_player_out_light(playr):
+	pass # Replace with function body.
