@@ -37,11 +37,7 @@ func _process(delta):
 		
 		#$AnimatedSprite2D.play("default")
 		#$AnimatedSprite2D.animation_looped
-	if $Camera2D/ReloadBar/TextureProgressBar.value == 100:
-		$Camera2D/ReloadBar.visible = false
-	else:
-		$Camera2D/ReloadBar.visible = true
-		
+	
 	#Player shooting
 	if Input.is_action_pressed("shootUp") and canShoot and !charging_active:
 		shootDirection = Vector2.UP
@@ -58,7 +54,6 @@ func _process(delta):
 		$ReloadBarTimer.start()
 		$Camera2D/ReloadBar/TextureProgressBar.value = 5
 		shoot.emit(selectedShootPos.global_position, shootDirection)
-		$AudioStreamPlayer2D.play()
 			
 	if Input.is_action_pressed("charge") and not charging_active:
 		$ChargingTime.start()
@@ -117,9 +112,6 @@ func _on_death_by_shadow_timer_timeout():
 
 func lose_hp():
 	hp -= 1
-	if $Camera2D/UI/AnimatedSprite2D.frame == 4:
-		get_tree().change_scene_to_file("res://scenes/deathscreen/deathscreen.tscn")
-		
 	$Camera2D/UI/AnimatedSprite2D.frame += 1	
 
 

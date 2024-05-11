@@ -16,6 +16,6 @@ fill_mode = 4
 texture_progress = ExtResource("1_j1nvq")
 
 [node name="PointLight2D" type="PointLight2D" parent="TextureProgressBar"]
-position = Vector2(352, 344)
+position = Vector2(352, 372)
 energy = 0.53
 texture = ExtResource("1_j1nvq")
