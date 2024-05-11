@@ -64,16 +64,13 @@ func _process(delta):
 		get_tree().create_tween().tween_property($PointLight2D2,"texture_scale", 0, 20)
 	else:
 		get_tree().create_tween().tween_property($PointLight2D2,"texture_scale", 20, 1.5)
-<<<<<<< Updated upstream
 		
-=======
 	if $PointLight2D2.get_texture_scale() <= 3:
 		get_tree().create_tween().tween_property($PointLight2D2,"texture_scale", 0, 0.1)
 		if $wDeathByShadowTimer.is_stopped():
 			$DeathByShadowTimer.start()
 			
 			
->>>>>>> Stashed changes
 # Reload canShoot
 func _on_shoot_reload_timer_timeout():
 	canShoot = true
