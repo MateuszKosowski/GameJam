@@ -10,7 +10,6 @@
 script = ExtResource("1_avm3s")
 
 [node name="Player" parent="." instance=ExtResource("2_3j6en")]
-z_index = 5
 position = Vector2(522, 284)
 
 [node name="PointLight2D" type="PointLight2D" parent="Player"]
