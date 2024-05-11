@@ -140,9 +140,11 @@ limit_bottom = 772
 position_smoothing_enabled = true
 
 [node name="UI" parent="Camera2D" instance=ExtResource("10_n5wqj")]
+z_index = 2
 position = Vector2(0, -1120)
 
 [node name="Progressbar" parent="Camera2D" instance=ExtResource("11_1bdin")]
+z_index = 2
 position = Vector2(0, 739.999)
 scale = Vector2(4, 4)
 

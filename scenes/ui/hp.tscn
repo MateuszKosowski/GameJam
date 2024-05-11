@@ -35,3 +35,8 @@ animations = [{
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_1qqdt")
 frame_progress = 0.606799
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(4, 4)
+energy = 0.85
+texture = ExtResource("1_4k8xk")
