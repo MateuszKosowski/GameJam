@@ -17,6 +17,7 @@ player = NodePath("Player")
 position = Vector2(421, 568)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 blend_mode = 1
 
 [node name="Bullets" type="Node2D" parent="."]
@@ -111,6 +112,7 @@ player = NodePath("../Player")
 
 [connection signal="shoot" from="Player" to="." method="_on_player_shoot"]
 [connection signal="timeout" from="RemoveBullet" to="." method="_on_remove_bullet_timeout"]
+[connection signal="damagePlayer" from="enemy" to="." method="_on_enemy_damage_player"]
 [connection signal="shoot" from="enemy" to="." method="_on_enemy_shoot"]
 [connection signal="playerInLight" from="lantern" to="." method="_on_lantern_player_in_light"]
 [connection signal="playerOutLight" from="lantern" to="." method="_on_lantern_player_out_light"]

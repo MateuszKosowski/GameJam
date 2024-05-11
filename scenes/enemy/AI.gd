@@ -32,13 +32,13 @@ func _process(delta):
 			pass
 		State.ENGAGE:
 			if player != null:
-				actor.rotation = actor.position.angle_to_point(player.global_position) - deg_to_rad(90)
+				#actor.rotation = actor.position.angle_to_point(player.global_position) - deg_to_rad(90)
 				if canShoot:
 					var directToPlayer = shootpt.global_position.direction_to(player.global_position)				
 					var selectedShootPos = shootpt.get_child(0)
 					canShoot = false
 					reloadTimer.start()
-					shoot.emit(shootpt.global_position, directToPlayer)
+					#shoot.emit(shootpt.global_position, directToPlayer)
 		_:
 			pass	
 

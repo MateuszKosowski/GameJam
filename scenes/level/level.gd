@@ -120,3 +120,4 @@ func _on_lantern_7_player_out_light(playr):
 func _on_lantern_8_player_out_light(playr):
 	player.in_light = false
 	pass # Replace with function body.
+

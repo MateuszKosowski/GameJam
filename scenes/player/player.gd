@@ -77,7 +77,6 @@ func _process(delta):
 			
 	if take_shadow_dmg:
 		resolve_dmg()
-	print(in_light)
 func resolve_dmg():
 	if in_light:
 		take_shadow_dmg = false
@@ -95,8 +94,6 @@ func _on_shoot_reload_timer_timeout():
 	$ReloadBarTimer.stop()
 	
 func handle_hit():
-	if hp <= 0:
-		pass
 	lose_hp()
 
 func _on_charging_time_timeout():
@@ -116,7 +113,7 @@ func _on_death_by_shadow_timer_timeout():
 
 func lose_hp():
 	hp -= 1
-	if $Camera2D/UI/AnimatedSprite2D.frame == 4:
+	if $Camera2D/UI/AnimatedSprite2D.frame == 4 or hp <= 0:
 			get_tree().change_scene_to_file("res://scenes/deathscreen/deathscreen.tscn")
 	
 	$Camera2D/UI/AnimatedSprite2D.frame += 1	

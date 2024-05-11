@@ -1,6 +1,6 @@
 extends CharacterBody2D
 signal shoot(bulletPosition, bulletDirection)
-
+signal damagePlayer()
 
 @export var player: Node2D
 @onready var navAgent := $NavigationAgent2D as NavigationAgent2D
@@ -35,9 +35,15 @@ func _on_shoot_reload_timer_timeout():
 
 
 func _on_player_detection_zone_shoot(bulletPosition, bulletDirection):
-		shoot.emit(bulletPosition, bulletDirection)
+		#shoot.emit(bulletPosition, bulletDirection)
 		pass
 
 
 func _on_pathfinding_timer_timeout():
 	make_path()
+
+
+func _on_killzone_body_entered(body):
+	if (body.is_in_group("player")):
+		player.lose_hp()
+		queue_free()
