@@ -7,8 +7,6 @@
 [sub_resource type="GDScript" id="GDScript_imgtt"]
 script/source = "extends Node2D
 
-
-var skip: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$ChangeScenesTimer.start()
@@ -16,7 +14,8 @@ func _ready():
 	$AnimationPlayer2.play(\"animate_enter\")
 	$AnimationPlayer2.queue(\"text_animate\")
 	$AnimationPlayer2.queue(\"black_fade\")
-	#get_tree().create_tween().tween_property($black_fade, \"self_modulate.a\", 100, 5)
+	
+	
 
 func _on_change_scenes_timer_timeout():
 	get_tree().change_scene_to_file(\"res://scenes/level/level.tscn\")
