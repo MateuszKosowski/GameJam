@@ -36,7 +36,7 @@ func _on_shoot_reload_timer_timeout():
 
 func _on_player_detection_zone_shoot(bulletPosition, bulletDirection):
 		shoot.emit(bulletPosition, bulletDirection)
-		pass
+		$AudioStreamPlayer2D.play()
 
 
 func _on_pathfinding_timer_timeout():

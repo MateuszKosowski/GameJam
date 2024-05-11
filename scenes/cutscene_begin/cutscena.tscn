@@ -1,22 +1,23 @@
-[gd_scene load_steps=15 format=3 uid="uid://cl6xhaf6us5r3"]
+[gd_scene load_steps=16 format=3 uid="uid://cl6xhaf6us5r3"]
 
 [ext_resource type="Texture2D" uid="uid://cp0hkxvwttm3u" path="res://graphics/background_final_pope2.png" id="1_wb5m4"]
 [ext_resource type="Texture2D" uid="uid://c63sksw3axo" path="res://graphics/cross.png" id="3_2so18"]
 [ext_resource type="FontFile" uid="uid://cmqdsxfon1ifi" path="res://fonts/EightBitDragon-anqx.ttf" id="4_n4ogk"]
+[ext_resource type="AudioStream" uid="uid://b852r01uoswim" path="res://audio/text_sound_effect.wav" id="4_q8scc"]
 
 [sub_resource type="GDScript" id="GDScript_imgtt"]
 script/source = "extends Node2D
 
-
-var skip: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$ChangeScenesTimer.start()
 	$AnimationPlayer.play(\"up_and_down\")
 	$AnimationPlayer2.play(\"animate_enter\")
+	$AudioStreamPlayer2D.play()
 	$AnimationPlayer2.queue(\"text_animate\")
 	$AnimationPlayer2.queue(\"black_fade\")
-	#get_tree().create_tween().tween_property($black_fade, \"self_modulate.a\", 100, 5)
+	
+	
 
 func _on_change_scenes_timer_timeout():
 	get_tree().change_scene_to_file(\"res://scenes/level/level.tscn\")
@@ -419,5 +420,8 @@ self_modulate = Color(1, 1, 1, 0)
 position = Vector2(758.5, 420)
 scale = Vector2(1689, 1004)
 texture = SubResource("CanvasTexture_ninsm")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_q8scc")
 
 [connection signal="timeout" from="ChangeScenesTimer" to="." method="_on_change_scenes_timer_timeout"]
