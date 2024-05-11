@@ -37,6 +37,7 @@ frame_progress = 0.0917542
 shape = SubResource("CapsuleShape2D_26k4m")
 
 [node name="ShootReloadTimer" type="Timer" parent="."]
+wait_time = 2.0
 one_shot = true
 
 [node name="ShootPos" type="Node2D" parent="."]

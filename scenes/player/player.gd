@@ -1,12 +1,13 @@
 extends CharacterBody2D
 
+const CHARGE_TIME = 2
 var canShoot: bool = true
 var shootDirection: Vector2
 #var looking_direction: bool = true
 var hp = 5
 #var looking_direction: bool = true
 var charging_active: bool = false
-
+var chargetime = 2
 
 signal shoot(bulletPosition, bulletDirection)
 
@@ -15,6 +16,8 @@ func _process(delta):
 	
 	#Player movement
 	var direction = Input.get_vector("moveLeft", "moveRight", "moveUp", "moveDown")
+	if charging_active: 
+		direction = Vector2(0,0)
 	position += direction * 200 * delta
 	
 	move_and_slide()
@@ -35,27 +38,28 @@ func _process(delta):
 		#$AnimatedSprite2D.animation_looped
 	
 	#Player shooting
-	if Input.is_action_pressed("shootUp") and canShoot:
+	if Input.is_action_pressed("shootUp") and canShoot and !charging_active:
 		shootDirection = Vector2.UP
-	if Input.is_action_pressed("shootDown") and canShoot:
+	if Input.is_action_pressed("shootDown") and canShoot and !charging_active:
 		shootDirection = Vector2.DOWN
-	if Input.is_action_pressed("shootLeft") and canShoot:
+	if Input.is_action_pressed("shootLeft") and canShoot and !charging_active:
 		shootDirection = Vector2.LEFT
-	if Input.is_action_pressed("shootRight") and canShoot:
+	if Input.is_action_pressed("shootRight") and canShoot and !charging_active:
 		shootDirection = Vector2.RIGHT
-	if Input.is_action_pressed("shootGeneral") and canShoot:
+	if Input.is_action_pressed("shootGeneral") and canShoot and !charging_active:
 		var selectedShootPos = $ShootPos.get_child(0)
 		canShoot = false
 		$ShootReloadTimer.start()
 		shoot.emit(selectedShootPos.global_position, shootDirection)
 			
-	if Input.is_action_pressed("charge") and !charging_active:
-		print("charge")
+	if Input.is_action_pressed("charge") and not charging_active:
 		$ChargingTime.start()
-		$".".set_process(false)
+		charging_active = true
 		$GPUParticles2D.emitting=true
-		
-		
+	print($ChargingTime.get_time_left())	
+	if charging_active and (chargetime - $ChargingTime.time_left) > 0.33:
+		chargetime -= 0.33
+		$Camera2D/Progressbar/AnimatedSprite2D.frame += 1
 		
 # Reload canShoot
 func _on_shoot_reload_timer_timeout():
@@ -70,12 +74,14 @@ func handle_hit():
 func _on_charging_time_timeout():
 	print("Charging Time over")
 	$GPUParticles2D.emitting=false
-	$".".set_process(true)
+	charging_active = false
 	get_tree().create_tween().tween_property($PointLight2D2,"texture_scale", 20, 1.5)
 	$RadiusActiveTimer.start()
+	$Camera2D/Progressbar/AnimatedSprite2D.frame = 0
+	chargetime = CHARGE_TIME
+	
 	
 
 func _on_radius_active_timer_timeout():
 	print("active timeout")
 	get_tree().create_tween().tween_property($PointLight2D2,"texture_scale", 10, 1.5)
-	charging_active=false
