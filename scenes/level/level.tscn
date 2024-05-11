@@ -20,6 +20,10 @@ texture_scale = 10.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
+limit_left = -1373
+limit_top = -765
+limit_right = 2210
+limit_bottom = 771
 position_smoothing_enabled = true
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
