@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dm3qbnnc28gw5"]
+[gd_scene load_steps=21 format=3 uid="uid://b0d74bhrtr4nf"]
 
 [ext_resource type="Texture2D" uid="uid://bhyod5sevrj5m" path="res://graphics/tiles/TX Shadow Plant.png" id="1_vuyiq"]
 [ext_resource type="Texture2D" uid="uid://cuiodebc1uu6f" path="res://graphics/tiles/TX Shadow.png" id="2_0an07"]
@@ -9,8 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://dywoqpm01im7a" path="res://graphics/tiles/TX Plant.png" id="7_mpnc0"]
 [ext_resource type="Texture2D" uid="uid://dwvfhqgksp74" path="res://graphics/tiles/TX Player.png" id="8_aheay"]
 [ext_resource type="Texture2D" uid="uid://dfj2y4i2l8tat" path="res://graphics/tiles/TX Props.png" id="9_80leu"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8rcbs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8kila"]
 texture = ExtResource("1_vuyiq")
