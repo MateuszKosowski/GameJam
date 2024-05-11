@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://blphuq6acnyg"]
+[gd_scene load_steps=4 format=3 uid="uid://blphuq6acnyg"]
 
-[ext_resource type="Texture2D" uid="uid://nth0njjmtwmp" path="res://graphics/magicBall.png" id="1_h1ysy"]
 [ext_resource type="Script" path="res://scenes/lantern/lantern.gd" id="1_oxho2"]
 [ext_resource type="Texture2D" uid="uid://c603vl0sbxibr" path="res://graphics/circle.png" id="2_tnoli"]
 
@@ -9,10 +8,6 @@ radius = 196.255
 
 [node name="lantern" type="Node2D" groups=["lantern"]]
 script = ExtResource("1_oxho2")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("1_h1ysy")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 scale = Vector2(0.75, 0.75)
@@ -26,11 +21,11 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_08rxc")
 
 [node name="TimerOn" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 6.0
 one_shot = true
 
 [node name="TimerOff" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 15.0
 one_shot = true
 
 [connection signal="body_entered" from="PlayerDetect" to="." method="_on_player_detect_body_entered"]

@@ -32,7 +32,7 @@ position = Vector2(-1182, 387)
 scale = Vector2(2, 2)
 
 [node name="enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_xo137")]
-position = Vector2(423, -204)
+position = Vector2(421, -204)
 motion_mode = 1
 player = NodePath("../Player")
 
@@ -43,7 +43,28 @@ position = Vector2(404, 770)
 shape = SubResource("WorldBoundaryShape2D_ekkrk")
 
 [node name="lantern" parent="." instance=ExtResource("5_ixwxy")]
-position = Vector2(1003, 96)
+position = Vector2(194, -529)
+
+[node name="lantern2" parent="." instance=ExtResource("5_ixwxy")]
+position = Vector2(641, -530)
+
+[node name="lantern3" parent="." instance=ExtResource("5_ixwxy")]
+position = Vector2(588, 449)
+
+[node name="lantern4" parent="." instance=ExtResource("5_ixwxy")]
+position = Vector2(2, -1053)
+
+[node name="lantern5" parent="." instance=ExtResource("5_ixwxy")]
+position = Vector2(-828, -1706)
+
+[node name="lantern6" parent="." instance=ExtResource("5_ixwxy")]
+position = Vector2(1627, 361)
+
+[node name="lantern7" parent="." instance=ExtResource("5_ixwxy")]
+position = Vector2(932, 302)
+
+[node name="lantern8" parent="." instance=ExtResource("5_ixwxy")]
+position = Vector2(-287, 312)
 
 [connection signal="shoot" from="Player" to="." method="_on_player_shoot"]
 [connection signal="timeout" from="RemoveBullet" to="." method="_on_remove_bullet_timeout"]
