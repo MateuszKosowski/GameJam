@@ -8,6 +8,8 @@ var hp = 5
 #var looking_direction: bool = true
 var charging_active: bool = false
 var chargetime = 2
+var take_shadow_dmg = false
+var in_light = false
 
 signal shoot(bulletPosition, bulletDirection)
 
@@ -59,12 +61,27 @@ func _process(delta):
 	if charging_active and (chargetime - $ChargingTime.time_left) > 0.33:
 		chargetime -= 0.33
 		$Camera2D/Progressbar/AnimatedSprite2D.frame += 1
-	print($RadiusActiveTimer.get_time_left())
 	if $RadiusActiveTimer.is_stopped():
-		get_tree().create_tween().tween_property($PointLight2D2,"texture_scale", 0, 20)
+		get_tree().create_tween().tween_property($PointLight2D2,"texture_scale", 0, 15)
 	else:
 		get_tree().create_tween().tween_property($PointLight2D2,"texture_scale", 20, 1.5)
+	if $PointLight2D2.get_texture_scale() <= 1.6 && $RadiusActiveTimer.is_stopped():
+		get_tree().create_tween().tween_property($PointLight2D2,"texture_scale", 0, 0.1)
+		if $DeathByShadowTimer.is_stopped() and !take_shadow_dmg:
+			print("chuuuuuj")
+			$DeathByShadowTimer.start()
+			
+	if take_shadow_dmg:
+		resolve_dmg()
 		
+func resolve_dmg():
+	if not $ChargingTime.is_stopped():
+		take_shadow_dmg = false
+		return
+	elif not in_light:
+		lose_hp()
+		take_shadow_dmg = false
+
 # Reload canShoot
 func _on_shoot_reload_timer_timeout():
 	canShoot = true
@@ -72,8 +89,7 @@ func _on_shoot_reload_timer_timeout():
 func handle_hit():
 	if hp <= 0:
 		pass
-	hp -= 1
-	$Camera2D/UI/AnimatedSprite2D.frame += 1	
+	lose_hp()
 
 func _on_charging_time_timeout():
 	print("Charging Time over")
@@ -82,8 +98,14 @@ func _on_charging_time_timeout():
 	$RadiusActiveTimer.start()
 	$Camera2D/Progressbar/AnimatedSprite2D.frame = 0
 	chargetime = CHARGE_TIME
-	
-	
 
 func _on_radius_active_timer_timeout():
 	print("active timeout")
+
+func _on_death_by_shadow_timer_timeout():
+	print("dbs timeout")
+	take_shadow_dmg = true;
+
+func lose_hp():
+	hp -= 1
+	$Camera2D/UI/AnimatedSprite2D.frame += 1	
