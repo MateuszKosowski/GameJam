@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://d21uspc35d462"]
+[gd_scene load_steps=8 format=3 uid="uid://d21uspc35d462"]
 
 [ext_resource type="Script" path="res://scenes/enemy/enemy1.gd" id="1_jvbon"]
 [ext_resource type="Texture2D" uid="uid://nxcdxxbo3ksi" path="res://graphics/playerHolder2.png" id="2_qsxf0"]
 [ext_resource type="Script" path="res://scenes/enemy/AI.gd" id="3_3kvcm"]
+[ext_resource type="AudioStream" uid="uid://yxusoeejso7p" path="res://audio/SFX_Shoot10.ogg" id="4_sndna"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7iori"]
 animations = [{
@@ -67,6 +68,9 @@ path_max_distance = 1000.0
 [node name="PathfindingTimer" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
+
+[node name="shoot_soundeffect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_sndna")
 
 [connection signal="timeout" from="ShootReloadTimer" to="." method="_on_shoot_reload_timer_timeout"]
 [connection signal="timeout" from="ShootReloadTimer" to="PlayerDetectionZone" method="_on_shoot_reload_timer_timeout"]
