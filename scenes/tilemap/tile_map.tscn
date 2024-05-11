@@ -1,5 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://dm3qbnnc28gw5"]
+[gd_scene load_steps=24 format=3 uid="uid://dm3qbnnc28gw5"]
 
+[ext_resource type="Shader" path="res://scenes/tilemap/tile_map.gdshader" id="1_mfswq"]
 [ext_resource type="Texture2D" uid="uid://bhyod5sevrj5m" path="res://graphics/tiles/TX Shadow Plant.png" id="1_vuyiq"]
 [ext_resource type="Texture2D" uid="uid://cuiodebc1uu6f" path="res://graphics/tiles/TX Shadow.png" id="2_0an07"]
 [ext_resource type="Texture2D" uid="uid://88l6cyigmp7g" path="res://graphics/tiles/TX Struct.png" id="3_mcl1e"]
@@ -9,6 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://dywoqpm01im7a" path="res://graphics/tiles/TX Plant.png" id="7_mpnc0"]
 [ext_resource type="Texture2D" uid="uid://dwvfhqgksp74" path="res://graphics/tiles/TX Player.png" id="8_aheay"]
 [ext_resource type="Texture2D" uid="uid://dfj2y4i2l8tat" path="res://graphics/tiles/TX Props.png" id="9_80leu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hdcpc"]
+shader = ExtResource("1_mfswq")
+shader_parameter/intensity = 1.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8kila"]
 texture = ExtResource("1_vuyiq")
@@ -1824,6 +1829,7 @@ sources/15 = SubResource("TileSetAtlasSource_123ln")
 
 [node name="TileMap" type="TileMap"]
 texture_filter = 1
+material = SubResource("ShaderMaterial_hdcpc")
 position = Vector2(-2756, 355)
 tile_set = SubResource("TileSet_mh8ot")
 format = 2
