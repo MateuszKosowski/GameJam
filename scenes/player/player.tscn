@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d23tong3hqic1" path="res://graphics/priest/priest_left_cross3.PNG" id="7_ei65i"]
 [ext_resource type="Texture2D" uid="uid://dd33xv3orvk32" path="res://graphics/white_sphere_1.png" id="8_ndyh3"]
 [ext_resource type="Texture2D" uid="uid://c603vl0sbxibr" path="res://graphics/circle.png" id="9_5xknr"]
-[ext_resource type="PackedScene" uid="uid://0vti88sf3638" path="res://scenes/ui/ui.tscn" id="10_n5wqj"]
+[ext_resource type="PackedScene" uid="uid://0vti88sf3638" path="res://scenes/ui/ui.tscn" id="10_wudf1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_26k4m"]
 radius = 264.0
@@ -132,8 +132,8 @@ position = Vector2(0, 0.000488281)
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 
-[node name="UI" parent="Camera2D" instance=ExtResource("10_n5wqj")]
-position = Vector2(0, -1120)
+[node name="UI" parent="Camera2D" instance=ExtResource("10_wudf1")]
+position = Vector2(0, -0.000488281)
 scale = Vector2(1, 1)
 
 [connection signal="timeout" from="ShootReloadTimer" to="." method="_on_shoot_reload_timer_timeout"]
