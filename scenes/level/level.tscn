@@ -2,16 +2,12 @@
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_avm3s"]
 [ext_resource type="PackedScene" uid="uid://bn7n3h61efd5g" path="res://scenes/player/player.tscn" id="2_3j6en"]
-<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://c603vl0sbxibr" path="res://graphics/circle.png" id="4_86j28"]
-=======
->>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://dm3qbnnc28gw5" path="res://scenes/tilemap/tile_map.tscn" id="4_eklwn"]
 [ext_resource type="PackedScene" uid="uid://d21uspc35d462" path="res://scenes/enemy/enemy1.tscn" id="5_xo137"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_avm3s")
-metadata/_edit_vertical_guides_ = [-1372.0]
 
 [node name="Player" parent="." instance=ExtResource("2_3j6en")]
 position = Vector2(522, 284)
@@ -24,10 +20,6 @@ texture_scale = 10.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
-limit_left = -1373
-limit_top = -765
-limit_right = 2210
-limit_bottom = 771
 position_smoothing_enabled = true
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]

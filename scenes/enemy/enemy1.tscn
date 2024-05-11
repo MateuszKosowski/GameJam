@@ -16,8 +16,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_26k4m"]
-radius = 76.0
-height = 152.0
+radius = 164.0
+height = 328.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e2lu6"]
 radius = 270.313
@@ -56,6 +56,7 @@ script = ExtResource("3_3kvcm")
 shape = SubResource("CircleShape2D_e2lu6")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_max_distance = 1000.0
 
 [node name="PathfindingTimer" type="Timer" parent="."]
 wait_time = 0.1
