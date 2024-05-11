@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://0vti88sf3638"]
+
+[ext_resource type="Texture2D" uid="uid://8u3xapx6mwgv" path="res://graphics/heart5.png" id="1_dsmos"]
+[ext_resource type="Texture2D" uid="uid://baj01jrpk4tdv" path="res://graphics/heart4.png" id="2_1uluu"]
+[ext_resource type="Texture2D" uid="uid://bgey05lcq7ofw" path="res://graphics/heart3.png" id="3_bjwfo"]
+[ext_resource type="Texture2D" uid="uid://br4jvrk3xtiiu" path="res://graphics/heart2.png" id="4_w3520"]
+[ext_resource type="Texture2D" uid="uid://cls4jskdsmcyu" path="res://graphics/heart1.png" id="5_d68ow"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1qqdt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dsmos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1uluu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bjwfo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_w3520")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_d68ow")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="UI" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(183, 54)
+sprite_frames = SubResource("SpriteFrames_1qqdt")
+frame_progress = 0.918556
