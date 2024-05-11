@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://mhaq835gwg4v"]
+[gd_scene load_steps=11 format=3 uid="uid://mhaq835gwg4v"]
 
 [ext_resource type="Texture2D" uid="uid://mx1kxrdsgw55" path="res://graphics/prgrsbar-1.png" id="1_egar2"]
 [ext_resource type="Texture2D" uid="uid://ddf2sqxsrtc65" path="res://graphics/prgrsbar0.png" id="1_opw3e"]
@@ -9,8 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://3urora7deshk" path="res://graphics/prgrsbar4.png" id="5_ywnmi"]
 [ext_resource type="Texture2D" uid="uid://twllnwjkdicq" path="res://graphics/prgrsbar5.png" id="6_vdy2q"]
 [ext_resource type="Texture2D" uid="uid://bokfsynkdt6p4" path="res://graphics/prgrsbar6.png" id="7_cdnwk"]
-[ext_resource type="Texture2D" uid="uid://umk5i74fvpyl" path="res://graphics/Ski_trail_rating_symbol_black_circle.png" id="9_3dtc0"]
-[ext_resource type="Texture2D" uid="uid://bucrevp2pxftq" path="res://graphics/Ski_trail_rating_symbol_black_circle - Copy.png" id="10_55cw4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eqrv8"]
 animations = [{
@@ -55,19 +53,3 @@ frame_progress = 0.665646
 [node name="PointLight2D" type="PointLight2D" parent="."]
 energy = 0.39
 texture = ExtResource("7_cdnwk")
-<<<<<<< Updated upstream
-=======
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-offset_left = 188.0
-offset_top = -326.0
-offset_right = 788.0
-offset_bottom = 274.0
-scale = Vector2(0.1, 0.1)
-fill_mode = 4
-texture_under = ExtResource("9_3dtc0")
-texture_progress = ExtResource("10_55cw4")
-
-[node name="ReloadProgressTimer" type="Timer" parent="TextureProgressBar"]
-wait_time = 0.05
->>>>>>> Stashed changes

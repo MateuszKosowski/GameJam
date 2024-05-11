@@ -11,7 +11,11 @@ var chargetime = 2
 var take_shadow_dmg = false
 var in_light = false
 
+
 signal shoot(bulletPosition, bulletDirection)
+
+func _ready():
+	$Camera2D/ReloadBar/TextureProgressBar.value = 360
 
 func _process(delta):
 	
@@ -51,6 +55,8 @@ func _process(delta):
 	if Input.is_action_pressed("shootGeneral") and canShoot and !charging_active:
 		var selectedShootPos = $ShootPos.get_child(0)
 		canShoot = false
+		$ReloadBarTimer.start()
+		$Camera2D/ReloadBar/TextureProgressBar.value = 5
 		$ShootReloadTimer.start()
 		shoot.emit(selectedShootPos.global_position, shootDirection)
 			
@@ -85,11 +91,14 @@ func resolve_dmg():
 # Reload canShoot
 func _on_shoot_reload_timer_timeout():
 	canShoot = true
+	$ReloadBarTimer.stop()
+	$Camera2D/ReloadBar/TextureProgressBar.value = 360
 	
 func handle_hit():
 	if hp <= 0:
 		pass
 	lose_hp()
+
 
 func _on_charging_time_timeout():
 	print("Charging Time over")
@@ -109,3 +118,6 @@ func _on_death_by_shadow_timer_timeout():
 func lose_hp():
 	hp -= 1
 	$Camera2D/UI/AnimatedSprite2D.frame += 1	
+
+func _on_reload_bar_timer_timeout():
+	$Camera2D/ReloadBar/TextureProgressBar.value += 5
