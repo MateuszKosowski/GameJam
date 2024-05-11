@@ -3,7 +3,7 @@ extends CharacterBody2D
 var canShoot: bool = true
 var shootDirection: Vector2
 #var looking_direction: bool = true
-var can_charge: bool = true
+var charging_active: bool = false
 
 
 signal shoot(bulletPosition, bulletDirection)
@@ -16,6 +16,7 @@ func _process(delta):
 	position += direction * 200 * delta
 	
 	move_and_slide()
+	
 	#Player flip horizontally
 	if direction.x < 0:
 		$AnimatedSprite2D.play("facing_left")
@@ -37,25 +38,27 @@ func _process(delta):
 		$ShootReloadTimer.start()
 		shoot.emit(selectedShootPos.global_position, shootDirection)
 			
-	if Input.is_action_pressed("charge") and can_charge:
+	if Input.is_action_pressed("charge") and !charging_active:
 		print("charge")
-		can_charge=false
-		$ChargeTimerCooldown.start()
 		$ChargingTime.start()
 		$".".set_process(false)
+		$GPUParticles2D.emitting=true
 		
-
-
-
+		
+		
 # Reload canShoot
 func _on_shoot_reload_timer_timeout():
 	canShoot = true
 
-func _on_charge_timer_cooldown_timeout():
-	can_charge=true
-	print("Charge cooldown over")
-	
 func _on_charging_time_timeout():
 	print("Charging Time over")
+	$GPUParticles2D.emitting=false
 	$".".set_process(true)
+	get_tree().create_tween().tween_property($PointLight2D2,"texture_scale", 20, 1.5)
+	$RadiusActiveTimer.start()
 	
+
+func _on_radius_active_timer_timeout():
+	print("active timeout")
+	get_tree().create_tween().tween_property($PointLight2D2,"texture_scale", 10, 1.5)
+	charging_active=false

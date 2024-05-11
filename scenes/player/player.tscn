@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cywoeccc5mecg" path="res://graphics/priest/priest_left_cross1_1.PNG" id="5_m24gg"]
 [ext_resource type="Texture2D" uid="uid://dua5hdjajkbrk" path="res://graphics/priest/priest_left_cross2.PNG" id="6_6m4ex"]
 [ext_resource type="Texture2D" uid="uid://d23tong3hqic1" path="res://graphics/priest/priest_left_cross3.PNG" id="7_ei65i"]
-[ext_resource type="Texture2D" uid="uid://dd33xv3orvk32" path="res://graphics/white_sphere_1.png" id="8_ndyh3"]
+[ext_resource type="Texture2D" path="res://graphics/white_sphere_1.png" id="8_ndyh3"]
 [ext_resource type="Texture2D" uid="uid://c603vl0sbxibr" path="res://graphics/circle.png" id="9_5xknr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_26k4m"]
@@ -31,13 +31,13 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 10.0,
+"duration": 1.0,
 "texture": ExtResource("5_m24gg")
 }, {
-"duration": 10.0,
+"duration": 1.0,
 "texture": ExtResource("6_6m4ex")
 }, {
-"duration": 10.0,
+"duration": 1.0,
 "texture": ExtResource("7_ei65i")
 }],
 "loop": true,
@@ -47,10 +47,14 @@ animations = [{
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_us7ex"]
 particle_flag_disable_z = true
-emission_shape_scale = Vector3(15, 15, 1)
+emission_shape_scale = Vector3(25, 25, 1)
 emission_shape = 1
 emission_sphere_radius = 128.0
 gravity = Vector3(0, 0, 0)
+radial_accel_min = -30.0
+radial_accel_max = -30.0
+scale_min = 5.0
+scale_max = 5.0
 
 [sub_resource type="Animation" id="Animation_7htgp"]
 resource_name = "white_sphere_charging"
@@ -84,14 +88,14 @@ position = Vector2(0, -440)
 scale = Vector2(129.5, -201)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 16
 process_material = SubResource("ParticleProcessMaterial_us7ex")
-
-[node name="ChargeTimerCooldown" type="Timer" parent="."]
-wait_time = 30.0
-one_shot = true
+lifetime = 1.5
 
 [node name="ChargingTime" type="Timer" parent="."]
 wait_time = 6.0
+one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -112,6 +116,16 @@ texture = ExtResource("8_ndyh3")
 visible = false
 texture = ExtResource("9_5xknr")
 
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(0, -288)
+energy = 1.95
+texture = ExtResource("9_5xknr")
+texture_scale = 10.0
+
+[node name="RadiusActiveTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
 [connection signal="timeout" from="ShootReloadTimer" to="." method="_on_shoot_reload_timer_timeout"]
-[connection signal="timeout" from="ChargeTimerCooldown" to="." method="_on_charge_timer_cooldown_timeout"]
 [connection signal="timeout" from="ChargingTime" to="." method="_on_charging_time_timeout"]
+[connection signal="timeout" from="RadiusActiveTimer" to="." method="_on_radius_active_timer_timeout"]
