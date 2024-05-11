@@ -9,6 +9,7 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ekkrk"]
 
 [node name="Level" type="Node2D"]
+z_index = 5
 script = ExtResource("1_avm3s")
 
 [node name="Player" parent="." instance=ExtResource("2_3j6en")]

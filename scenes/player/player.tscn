@@ -143,7 +143,8 @@ position_smoothing_enabled = true
 position = Vector2(0, -1120)
 
 [node name="Progressbar" parent="Camera2D" instance=ExtResource("11_1bdin")]
-position = Vector2(0, 739.999)
+z_index = 5
+position = Vector2(3.8147e-06, 880)
 scale = Vector2(4, 4)
 
 [node name="DeathByShadowTimer" type="Timer" parent="."]
