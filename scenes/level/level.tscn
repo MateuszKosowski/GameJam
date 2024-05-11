@@ -35,12 +35,13 @@ one_shot = true
 [node name="Player2" parent="." instance=ExtResource("5_xo137")]
 position = Vector2(989, 270)
 
-[node name="Node2D2" type="Node2D" parent="."]
+[node name="TileMap" parent="." instance=ExtResource("4_eklwn")]
 position = Vector2(-1182, 387)
 scale = Vector2(2, 2)
 
-[node name="TileMap" parent="Node2D2" instance=ExtResource("4_eklwn")]
-position = Vector2(0, 0)
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2(-1182, 387)
+scale = Vector2(2, 2)
 
 [connection signal="shoot" from="Player" to="." method="_on_player_shoot"]
 [connection signal="timeout" from="RemoveBullet" to="." method="_on_remove_bullet_timeout"]
