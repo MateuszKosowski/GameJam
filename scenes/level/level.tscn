@@ -17,7 +17,6 @@ player = NodePath("Player")
 position = Vector2(421, 568)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
 blend_mode = 1
 
 [node name="Bullets" type="Node2D" parent="."]
