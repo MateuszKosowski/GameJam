@@ -12,10 +12,10 @@ func _process(delta):
 
 
 func _on_button_start_pressed():
-	get_tree().change_scene_to_file("res://scenes/level/level.tscn")
+	get_tree().quit()
 	
 
 
 func _on_button_exit_pressed():
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://scenes/level/level.tscn")
 	

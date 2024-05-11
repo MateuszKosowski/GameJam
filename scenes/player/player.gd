@@ -114,8 +114,11 @@ func _on_death_by_shadow_timer_timeout():
 
 func lose_hp():
 	hp -= 1
+	if $Camera2D/UI/AnimatedSprite2D.frame == 4:
+			get_tree().change_scene_to_file("res://scenes/deathscreen/deathscreen.tscn")
+	
 	$Camera2D/UI/AnimatedSprite2D.frame += 1	
-
+	
 
 func _on_reload_bar_timer_timeout():
 	$Camera2D/ReloadBar/TextureProgressBar.value += 5
