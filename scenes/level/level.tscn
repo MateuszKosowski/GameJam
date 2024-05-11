@@ -45,4 +45,3 @@ position = Vector2(423, -204)
 
 [connection signal="shoot" from="Player" to="." method="_on_player_shoot"]
 [connection signal="timeout" from="RemoveBullet" to="." method="_on_remove_bullet_timeout"]
-[connection signal="shoot" from="enemy" to="." method="_on_enemy_shoot"]

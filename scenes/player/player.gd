@@ -8,6 +8,7 @@ signal shoot(bulletPosition, bulletDirection)
 
 func _process(delta):
 	
+	move_and_slide()
 	#Player movement
 	var direction = Input.get_vector("moveLeft", "moveRight", "moveUp", "moveDown")
 	position += direction * 200 * delta
