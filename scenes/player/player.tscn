@@ -134,7 +134,7 @@ one_shot = true
 position = Vector2(0, 0.000488281)
 zoom = Vector2(2, 2)
 limit_left = -1373
-limit_top = -765
+limit_top = -1980
 limit_right = 2210
 limit_bottom = 772
 position_smoothing_enabled = true
@@ -149,6 +149,8 @@ scale = Vector2(4, 4)
 [node name="DeathByShadowTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="timeout" from="ShootReloadTimer" to="." method="_on_shoot_reload_timer_timeout"]
 [connection signal="timeout" from="ChargingTime" to="." method="_on_charging_time_timeout"]
