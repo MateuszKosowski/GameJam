@@ -1672,7 +1672,7 @@ texture_region_size = Vector2i(32, 32)
 14:4/0 = 0
 14:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:4/0/physics_layer_0/angular_velocity = 0.0
-14:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 12.25, -16, 13)
+14:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(9.75, -6.25, 10, 9.75, -9.75, 10, -10, -6.75)
 0:5/0 = 0
 0:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:5/0/physics_layer_0/angular_velocity = 0.0
@@ -1846,11 +1846,11 @@ texture_region_size = Vector2i(32, 32)
 10:3/0 = 0
 10:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 10:3/0/physics_layer_0/angular_velocity = 0.0
-10:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)
+10:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(19.25, -11.75, 19.5, 10.5, -18.75, 10.5, -18.25, -11.75)
 9:3/0 = 0
 9:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:3/0/physics_layer_0/angular_velocity = 0.0
-9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, -16)
+9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(19.25, -11.75, 19.5, 10.5, -18.75, 10.5, -18.75, -12)
 
 [sub_resource type="TileSet" id="TileSet_mh8ot"]
 tile_size = Vector2i(32, 32)
