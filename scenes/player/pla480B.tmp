@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://dua5hdjajkbrk" path="res://graphics/priest/priest_left_cross2.PNG" id="6_6m4ex"]
 [ext_resource type="Texture2D" uid="uid://d23tong3hqic1" path="res://graphics/priest/priest_left_cross3.PNG" id="7_ei65i"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_26k4m"]
+radius = 264.0
+height = 1152.0
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_7iori"]
 animations = [{
 "frames": [{
@@ -39,11 +43,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_26k4m"]
-radius = 264.0
-height = 1152.0
-
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.05, 0.05)
 script = ExtResource("1_e4hbn")
 
@@ -56,10 +56,6 @@ shape = SubResource("CapsuleShape2D_26k4m")
 sprite_frames = SubResource("SpriteFrames_7iori")
 animation = &"facing_left"
 autoplay = "default"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
-position = Vector2(48, -76)
-shape = SubResource("CapsuleShape2D_26k4m")
 
 [node name="ShootReloadTimer" type="Timer" parent="."]
 one_shot = true
