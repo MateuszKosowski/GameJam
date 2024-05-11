@@ -18,7 +18,6 @@ func _ready():
 	$ChangeScenesTimer.start()
 
 func _on_change_scenes_timer_timeout():
-	
 	get_tree().change_scene_to_file(\"res://scenes/level/level.tscn\")
 "
 
@@ -214,6 +213,7 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+<<<<<<< Updated upstream
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
@@ -226,6 +226,8 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 1)]
 }
+=======
+>>>>>>> Stashed changes
 
 [sub_resource type="Animation" id="Animation_wol1w"]
 resource_name = "text_animate"
@@ -335,7 +337,11 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_keuug"]
 bg_color = Color(0, 0, 0, 1)
 
+<<<<<<< Updated upstream
 [sub_resource type="CanvasTexture" id="CanvasTexture_q1mfe"]
+=======
+[sub_resource type="CanvasTexture" id="CanvasTexture_8utv2"]
+>>>>>>> Stashed changes
 
 [node name="cutscena" type="Node2D"]
 script = SubResource("GDScript_imgtt")
@@ -435,6 +441,7 @@ offset_bottom = 96.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_keuug")
 metadata/_edit_use_anchors_ = true
 
+<<<<<<< Updated upstream
 [node name="ChangeScenesTimer" type="Timer" parent="."]
 wait_time = 5.5
 
@@ -444,5 +451,16 @@ self_modulate = Color(1, 1, 1, 0)
 position = Vector2(739, 407.5)
 scale = Vector2(1662, 937)
 texture = SubResource("CanvasTexture_q1mfe")
+=======
+[node name="black_fade" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(775, 415.5)
+scale = Vector2(1682, 949)
+texture = SubResource("CanvasTexture_8utv2")
+
+[node name="ChangeScenesTimer" type="Timer" parent="."]
+wait_time = 5.5
+>>>>>>> Stashed changes
 
 [connection signal="timeout" from="ChangeScenesTimer" to="." method="_on_change_scenes_timer_timeout"]

@@ -6,7 +6,10 @@ signal shoot(bulletPosition, bulletDirection)
 @onready var navAgent := $NavigationAgent2D as NavigationAgent2D
 
 func _ready():
+<<<<<<< Updated upstream
 	#var ai = $AI
+=======
+>>>>>>> Stashed changes
 	var shootpt = $ShootPos
 	var reloadTimer = $ShootReloadTimer
 	var playerDetect = $PlayerDetectionZone

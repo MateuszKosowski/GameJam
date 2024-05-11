@@ -132,8 +132,13 @@ position = Vector2(0, 0.000488281)
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 
+<<<<<<< Updated upstream
 [node name="UI" parent="Camera2D" instance=ExtResource("10_wudf1")]
 position = Vector2(0, -0.000488281)
+=======
+[node name="UI" parent="Camera2D" instance=ExtResource("10_n5wqj")]
+position = Vector2(0, -840)
+>>>>>>> Stashed changes
 scale = Vector2(1, 1)
 
 [connection signal="timeout" from="ShootReloadTimer" to="." method="_on_shoot_reload_timer_timeout"]
