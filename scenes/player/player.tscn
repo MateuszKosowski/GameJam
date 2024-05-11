@@ -44,7 +44,6 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-z_index = 2
 scale = Vector2(0.05, 0.05)
 script = ExtResource("1_e4hbn")
 
