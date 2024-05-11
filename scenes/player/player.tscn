@@ -130,11 +130,14 @@ one_shot = true
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 0.000488281)
 zoom = Vector2(2, 2)
+limit_left = -1373
+limit_top = -765
+limit_right = 2210
+limit_bottom = 772
 position_smoothing_enabled = true
 
 [node name="UI" parent="Camera2D" instance=ExtResource("10_n5wqj")]
 position = Vector2(0, -1120)
-scale = Vector2(1, 1)
 
 [connection signal="timeout" from="ShootReloadTimer" to="." method="_on_shoot_reload_timer_timeout"]
 [connection signal="timeout" from="ChargingTime" to="." method="_on_charging_time_timeout"]
