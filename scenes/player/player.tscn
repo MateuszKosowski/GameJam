@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://d23tong3hqic1" path="res://graphics/priest/priest_left_cross3.PNG" id="7_ei65i"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_26k4m"]
-radius = 332.0
-height = 1232.0
+radius = 264.0
+height = 1152.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7iori"]
 animations = [{
@@ -43,12 +43,8 @@ animations = [{
 "speed": 5.0
 }]
 
-<<<<<<< Updated upstream
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-=======
-[node name="Player" type="CharacterBody2D"]
 z_index = 2
->>>>>>> Stashed changes
 scale = Vector2(0.05, 0.05)
 script = ExtResource("1_e4hbn")
 
