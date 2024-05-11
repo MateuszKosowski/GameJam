@@ -3,6 +3,7 @@ extends CharacterBody2D
 var canShoot: bool = true
 var shootDirection: Vector2
 var looking_direction: bool = true
+var hp = 5
 
 signal shoot(bulletPosition, bulletDirection)
 
@@ -27,9 +28,6 @@ func _process(delta):
 		
 		#$AnimatedSprite2D.play("default")
 		#$AnimatedSprite2D.animation_looped
-	
-	
-	
 	
 	#Player shooting
 	if Input.is_action_pressed("shootUp") and canShoot:
@@ -70,3 +68,7 @@ func _process(delta):
 # Reload canShoot
 func _on_shoot_reload_timer_timeout():
 	canShoot = true
+	
+func handle_hit():
+	hp -= 1
+	print(hp)

@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://bn7n3h61efd5g"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_e4hbn"]
+[ext_resource type="Texture2D" uid="uid://1fq1xmd6bbni" path="res://graphics/priest/IMG_1951.PNG" id="2_k72v2"]
+[ext_resource type="Texture2D" uid="uid://un55krqmxma4" path="res://graphics/priest/IMG_1953.PNG" id="3_1oalf"]
+[ext_resource type="Texture2D" uid="uid://htyomk7sx3vf" path="res://graphics/priest/IMG_1955.PNG" id="4_0pvli"]
+[ext_resource type="Texture2D" uid="uid://cywoeccc5mecg" path="res://graphics/priest/priest_left_cross1_1.PNG" id="5_m24gg"]
+[ext_resource type="Texture2D" uid="uid://dua5hdjajkbrk" path="res://graphics/priest/priest_left_cross2.PNG" id="6_6m4ex"]
+[ext_resource type="Texture2D" uid="uid://d23tong3hqic1" path="res://graphics/priest/priest_left_cross3.PNG" id="7_ei65i"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_26k4m"]
+radius = 264.0
+height = 1152.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7iori"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_k72v2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1oalf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0pvli")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 10.0,
+"texture": ExtResource("5_m24gg")
+}, {
+"duration": 10.0,
+"texture": ExtResource("6_6m4ex")
+}, {
+"duration": 10.0,
+"texture": ExtResource("7_ei65i")
+}],
+"loop": true,
+"name": &"facing_left",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+z_index = 2
+scale = Vector2(0.05, 0.05)
+script = ExtResource("1_e4hbn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
+position = Vector2(48, -76)
+shape = SubResource("CapsuleShape2D_26k4m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7iori")
+animation = &"facing_left"
+autoplay = "default"
+
+[node name="ShootReloadTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ShootPos" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="ShootPos"]
+position = Vector2(560, -184)
+scale = Vector2(129.5, -201)
+
+[node name="ShootingInOposingDirectionTImer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="timeout" from="ShootReloadTimer" to="." method="_on_shoot_reload_timer_timeout"]
