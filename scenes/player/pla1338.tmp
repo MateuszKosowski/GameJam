@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bn7n3h61efd5g"]
+[gd_scene load_steps=11 format=3 uid="uid://bn7n3h61efd5g"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_e4hbn"]
 [ext_resource type="Texture2D" uid="uid://1fq1xmd6bbni" path="res://graphics/priest/IMG_1951.PNG" id="2_k72v2"]
@@ -7,8 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://cywoeccc5mecg" path="res://graphics/priest/priest_left_cross1_1.PNG" id="5_m24gg"]
 [ext_resource type="Texture2D" uid="uid://dua5hdjajkbrk" path="res://graphics/priest/priest_left_cross2.PNG" id="6_6m4ex"]
 [ext_resource type="Texture2D" uid="uid://d23tong3hqic1" path="res://graphics/priest/priest_left_cross3.PNG" id="7_ei65i"]
-[ext_resource type="Texture2D" uid="uid://dd33xv3orvk32" path="res://graphics/white_sphere_1.png" id="8_ndyh3"]
-[ext_resource type="Texture2D" uid="uid://c603vl0sbxibr" path="res://graphics/circle.png" id="9_5xknr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_26k4m"]
 radius = 264.0
@@ -52,14 +50,6 @@ emission_shape = 1
 emission_sphere_radius = 128.0
 gravity = Vector3(0, 0, 0)
 
-[sub_resource type="Animation" id="Animation_7htgp"]
-resource_name = "white_sphere_charging"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_k4ntu"]
-_data = {
-"white_sphere_charging": SubResource("Animation_7htgp")
-}
-
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.05, 0.05)
 script = ExtResource("1_e4hbn")
@@ -84,34 +74,7 @@ position = Vector2(0, -440)
 scale = Vector2(129.5, -201)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+visible = false
 process_material = SubResource("ParticleProcessMaterial_us7ex")
 
-[node name="ChargeTimerCooldown" type="Timer" parent="."]
-wait_time = 30.0
-one_shot = true
-
-[node name="ChargingTime" type="Timer" parent="."]
-wait_time = 6.0
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_k4ntu")
-}
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(20, -80)
-scale = Vector2(1.9, 1.9)
-texture = ExtResource("8_ndyh3")
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
-visible = false
-texture = ExtResource("8_ndyh3")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("9_5xknr")
-
 [connection signal="timeout" from="ShootReloadTimer" to="." method="_on_shoot_reload_timer_timeout"]
-[connection signal="timeout" from="ChargeTimerCooldown" to="." method="_on_charge_timer_cooldown_timeout"]
-[connection signal="timeout" from="ChargingTime" to="." method="_on_charging_time_timeout"]
