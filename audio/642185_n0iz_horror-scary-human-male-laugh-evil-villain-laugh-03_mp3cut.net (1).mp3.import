@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://3r7pbxc2x4yv"
+path="res://.godot/imported/642185_n0iz_horror-scary-human-male-laugh-evil-villain-laugh-03_mp3cut.net (1).mp3-1bfad7e4ad22b3da7006580d14cd00f6.mp3str"
+
+[deps]
+
+source_file="res://audio/642185_n0iz_horror-scary-human-male-laugh-evil-villain-laugh-03_mp3cut.net (1).mp3"
+dest_files=["res://.godot/imported/642185_n0iz_horror-scary-human-male-laugh-evil-villain-laugh-03_mp3cut.net (1).mp3-1bfad7e4ad22b3da7006580d14cd00f6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

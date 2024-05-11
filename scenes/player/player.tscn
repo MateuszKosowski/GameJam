@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bn7n3h61efd5g"]
+[gd_scene load_steps=21 format=3 uid="uid://bn7n3h61efd5g"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_e4hbn"]
 [ext_resource type="Texture2D" uid="uid://1fq1xmd6bbni" path="res://graphics/priest/IMG_1951.PNG" id="2_k72v2"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://mhaq835gwg4v" path="res://scenes/ui/progressbar.tscn" id="11_1bdin"]
 [ext_resource type="AudioStream" uid="uid://dq0d75d8diyov" path="res://audio/SFX_Shoot06.ogg" id="12_gh82p"]
 [ext_resource type="PackedScene" uid="uid://dprxhvtiq55cm" path="res://scenes/ui/reload_bar.tscn" id="12_y6ke2"]
+[ext_resource type="AudioStream" uid="uid://bk85k8nt7n3h" path="res://audio/240800__ryanconway__hitting-a-tin-can.wav" id="13_5ydl2"]
+[ext_resource type="AudioStream" uid="uid://c1cq5eoxgbscp" path="res://audio/251475_klankbeeld_choir-amen-01-140928_mp3cut.net (1).mp3" id="15_7ob4l"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_26k4m"]
 radius = 264.0
@@ -155,11 +157,20 @@ position = Vector2(520, -400)
 wait_time = 2.0
 one_shot = true
 
+[node name="AudioStreamPlayer_hit" type="AudioStreamPlayer2D" parent="."]
+scale = Vector2(1, 1)
+stream = ExtResource("13_5ydl2")
+volume_db = 20.0
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_gh82p")
 
 [node name="ReloadBarTimer" type="Timer" parent="."]
 wait_time = 0.05
+
+[node name="AudioStreamPlayer_charge" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_7ob4l")
+volume_db = 20.0
 
 [connection signal="timeout" from="ShootReloadTimer" to="." method="_on_shoot_reload_timer_timeout"]
 [connection signal="timeout" from="ChargingTime" to="." method="_on_charging_time_timeout"]

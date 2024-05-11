@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cp0hkxvwttm3u" path="res://graphics/background_final_pope2.png" id="1_wb5m4"]
 [ext_resource type="Texture2D" uid="uid://c63sksw3axo" path="res://graphics/cross.png" id="3_2so18"]
-[ext_resource type="AudioStream" uid="uid://81envybvlip2" path="res://audio/text_sound_effect.wav" id="4_7rtwr"]
+[ext_resource type="AudioStream" uid="uid://3r7pbxc2x4yv" path="res://audio/642185_n0iz_horror-scary-human-male-laugh-evil-villain-laugh-03_mp3cut.net (1).mp3" id="4_ivufl"]
 [ext_resource type="FontFile" uid="uid://cmqdsxfon1ifi" path="res://fonts/EightBitDragon-anqx.ttf" id="4_n4ogk"]
 
 [sub_resource type="GDScript" id="GDScript_imgtt"]
@@ -422,7 +422,7 @@ scale = Vector2(1689, 1004)
 texture = SubResource("CanvasTexture_ninsm")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_7rtwr")
+stream = ExtResource("4_ivufl")
 volume_db = 15.0
 
 [connection signal="timeout" from="ChangeScenesTimer" to="." method="_on_change_scenes_timer_timeout"]

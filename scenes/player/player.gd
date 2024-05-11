@@ -61,6 +61,7 @@ func _process(delta):
 		$AudioStreamPlayer2D.play()
 			
 	if Input.is_action_pressed("charge") and not charging_active:
+		$AudioStreamPlayer_charge.play()
 		$ChargingTime.start()
 		charging_active = true
 		$GPUParticles2D.emitting=true
@@ -117,6 +118,7 @@ func _on_death_by_shadow_timer_timeout():
 
 func lose_hp():
 	hp -= 1
+	$AudioStreamPlayer_hit.play()
 	if $Camera2D/UI/AnimatedSprite2D.frame == 4:
 			get_tree().change_scene_to_file("res://scenes/deathscreen/deathscreen.tscn")
 	
