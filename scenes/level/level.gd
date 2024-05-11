@@ -36,3 +36,5 @@ func _on_mob_spawner_spawn_mob(where, player_scane):
 	nenemy.player = player_scane
 	$Mobs.add_child(nenemy)
 	pass # Replace with function body.
+
+

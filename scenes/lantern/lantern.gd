@@ -3,6 +3,9 @@ extends Node2D
 var active:bool = true
 var playerin: bool = false
 
+signal playerOut()
+signal playerIn()
+
 func _process(delta):
 	if active:
 		$PointLight2D.set_enabled(true)
