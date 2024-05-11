@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://dwvfhqgksp74" path="res://graphics/tiles/TX Player.png" id="8_aheay"]
 [ext_resource type="Texture2D" uid="uid://dfj2y4i2l8tat" path="res://graphics/tiles/TX Props.png" id="9_80leu"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8rcbs"]
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8kila"]
 texture = ExtResource("1_vuyiq")
 texture_region_size = Vector2i(32, 32)
@@ -1737,7 +1739,8 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_mh8ot"]
 tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 255
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_8rcbs")
 sources/7 = SubResource("TileSetAtlasSource_mkmse")
 sources/8 = SubResource("TileSetAtlasSource_ln1ie")
 sources/9 = SubResource("TileSetAtlasSource_78wqi")
