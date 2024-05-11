@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bn7n3h61efd5g"]
+[gd_scene load_steps=17 format=3 uid="uid://bn7n3h61efd5g"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_e4hbn"]
 [ext_resource type="Texture2D" uid="uid://1fq1xmd6bbni" path="res://graphics/priest/IMG_1951.PNG" id="2_k72v2"]
@@ -9,7 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://d23tong3hqic1" path="res://graphics/priest/priest_left_cross3.PNG" id="7_ei65i"]
 [ext_resource type="Texture2D" uid="uid://dd33xv3orvk32" path="res://graphics/white_sphere_1.png" id="8_ndyh3"]
 [ext_resource type="Texture2D" uid="uid://c603vl0sbxibr" path="res://graphics/circle.png" id="9_5xknr"]
-[ext_resource type="PackedScene" uid="uid://0vti88sf3638" path="res://scenes/ui/ui.tscn" id="10_n5wqj"]
+[ext_resource type="PackedScene" uid="uid://c01ahsc825iai" path="res://scenes/ui/hp.tscn" id="10_n5wqj"]
+[ext_resource type="PackedScene" uid="uid://mhaq835gwg4v" path="res://scenes/ui/progressbar.tscn" id="11_1bdin"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_26k4m"]
 radius = 264.0
@@ -95,7 +96,7 @@ process_material = SubResource("ParticleProcessMaterial_us7ex")
 lifetime = 1.5
 
 [node name="ChargingTime" type="Timer" parent="."]
-wait_time = 6.0
+wait_time = 2.0
 one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -124,7 +125,7 @@ texture = ExtResource("9_5xknr")
 texture_scale = 10.0
 
 [node name="RadiusActiveTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 10.0
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -138,6 +139,10 @@ position_smoothing_enabled = true
 
 [node name="UI" parent="Camera2D" instance=ExtResource("10_n5wqj")]
 position = Vector2(0, -1120)
+
+[node name="Progressbar" parent="Camera2D" instance=ExtResource("11_1bdin")]
+position = Vector2(0, 739.999)
+scale = Vector2(4, 4)
 
 [connection signal="timeout" from="ShootReloadTimer" to="." method="_on_shoot_reload_timer_timeout"]
 [connection signal="timeout" from="ChargingTime" to="." method="_on_charging_time_timeout"]

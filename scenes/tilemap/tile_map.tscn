@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b0d74bhrtr4nf"]
+[gd_scene load_steps=22 format=3 uid="uid://dm3qbnnc28gw5"]
 
 [ext_resource type="Texture2D" uid="uid://bhyod5sevrj5m" path="res://graphics/tiles/TX Shadow Plant.png" id="1_vuyiq"]
 [ext_resource type="Texture2D" uid="uid://cuiodebc1uu6f" path="res://graphics/tiles/TX Shadow.png" id="2_0an07"]
