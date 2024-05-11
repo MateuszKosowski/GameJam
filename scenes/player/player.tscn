@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bn7n3h61efd5g"]
+[gd_scene load_steps=19 format=3 uid="uid://bn7n3h61efd5g"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_e4hbn"]
 [ext_resource type="Texture2D" uid="uid://1fq1xmd6bbni" path="res://graphics/priest/IMG_1951.PNG" id="2_k72v2"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c01ahsc825iai" path="res://scenes/ui/hp.tscn" id="10_n5wqj"]
 [ext_resource type="PackedScene" uid="uid://mhaq835gwg4v" path="res://scenes/ui/progressbar.tscn" id="11_1bdin"]
 [ext_resource type="AudioStream" uid="uid://dq0d75d8diyov" path="res://audio/SFX_Shoot06.ogg" id="12_gh82p"]
-[ext_resource type="PackedScene" uid="uid://dprxhvtiq55cm" path="res://scenes/ui/reload_bar.tscn" id="12_bp53j"]
+[ext_resource type="PackedScene" uid="uid://dprxhvtiq55cm" path="res://scenes/ui/reload_bar.tscn" id="12_y6ke2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_26k4m"]
 radius = 264.0
@@ -148,8 +148,9 @@ position = Vector2(0, -1120)
 position = Vector2(0, 739.999)
 scale = Vector2(4, 4)
 
-[node name="ReloadBar" parent="Camera2D" instance=ExtResource("12_bp53j")]
-position = Vector2(960, 19.9995)
+[node name="ReloadBar" parent="Camera2D" instance=ExtResource("12_y6ke2")]
+position = Vector2(520, -400)
+scale = Vector2(1, 1)
 
 [node name="DeathByShadowTimer" type="Timer" parent="."]
 wait_time = 2.0
@@ -165,3 +166,4 @@ wait_time = 0.05
 [connection signal="timeout" from="ChargingTime" to="." method="_on_charging_time_timeout"]
 [connection signal="timeout" from="RadiusActiveTimer" to="." method="_on_radius_active_timer_timeout"]
 [connection signal="timeout" from="DeathByShadowTimer" to="." method="_on_death_by_shadow_timer_timeout"]
+[connection signal="timeout" from="ReloadBarTimer" to="." method="_on_reload_bar_timer_timeout"]
