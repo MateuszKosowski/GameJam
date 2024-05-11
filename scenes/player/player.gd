@@ -56,10 +56,14 @@ func _process(delta):
 		$ChargingTime.start()
 		charging_active = true
 		$GPUParticles2D.emitting=true
-	print($ChargingTime.get_time_left())	
 	if charging_active and (chargetime - $ChargingTime.time_left) > 0.33:
 		chargetime -= 0.33
 		$Camera2D/Progressbar/AnimatedSprite2D.frame += 1
+	print($RadiusActiveTimer.get_time_left())
+	if $RadiusActiveTimer.is_stopped():
+		get_tree().create_tween().tween_property($PointLight2D2,"texture_scale", 0, 20)
+	else:
+		get_tree().create_tween().tween_property($PointLight2D2,"texture_scale", 20, 1.5)
 		
 # Reload canShoot
 func _on_shoot_reload_timer_timeout():
@@ -69,13 +73,12 @@ func handle_hit():
 	if hp <= 0:
 		pass
 	hp -= 1
-	$Camera2D/UI/AnimatedSprite2D.frame += 1
+	$Camera2D/UI/AnimatedSprite2D.frame += 1	
 
 func _on_charging_time_timeout():
 	print("Charging Time over")
 	$GPUParticles2D.emitting=false
 	charging_active = false
-	get_tree().create_tween().tween_property($PointLight2D2,"texture_scale", 20, 1.5)
 	$RadiusActiveTimer.start()
 	$Camera2D/Progressbar/AnimatedSprite2D.frame = 0
 	chargetime = CHARGE_TIME
@@ -84,4 +87,3 @@ func _on_charging_time_timeout():
 
 func _on_radius_active_timer_timeout():
 	print("active timeout")
-	get_tree().create_tween().tween_property($PointLight2D2,"texture_scale", 10, 1.5)

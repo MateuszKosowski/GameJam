@@ -125,7 +125,7 @@ texture = ExtResource("9_5xknr")
 texture_scale = 10.0
 
 [node name="RadiusActiveTimer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 5.0
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
