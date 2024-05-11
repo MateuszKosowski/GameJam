@@ -1,21 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://d21uspc35d462"]
+[gd_scene load_steps=7 format=3 uid="uid://d21uspc35d462"]
 
 [ext_resource type="Script" path="res://scenes/enemy/enemy1.gd" id="1_jvbon"]
-[ext_resource type="Texture2D" uid="uid://brtchidkmyi45" path="res://graphics/Grafika_bez_nazwy_1.png" id="2_goaiw"]
+[ext_resource type="Texture2D" uid="uid://nxcdxxbo3ksi" path="res://graphics/playerHolder2.png" id="2_qsxf0"]
 [ext_resource type="Script" path="res://scenes/enemy/AI.gd" id="3_3kvcm"]
-[ext_resource type="Texture2D" uid="uid://1d3v8c5k4sas" path="res://graphics/Grafika_bez_nazwy.png" id="3_74tl6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7iori"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_goaiw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_74tl6")
+"texture": ExtResource("2_qsxf0")
 }],
 "loop": true,
-"name": &"new_animation",
+"name": &"default",
 "speed": 5.0
 }]
 
@@ -35,10 +31,9 @@ collision_mask = 3
 script = ExtResource("1_jvbon")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_7iori")
-animation = &"new_animation"
-autoplay = "new_animation"
+autoplay = "default"
+frame_progress = 0.0917542
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_26k4m")
@@ -72,6 +67,8 @@ path_max_distance = 1000.0
 [node name="PathfindingTimer" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="timeout" from="ShootReloadTimer" to="." method="_on_shoot_reload_timer_timeout"]
 [connection signal="timeout" from="ShootReloadTimer" to="PlayerDetectionZone" method="_on_shoot_reload_timer_timeout"]
