@@ -66,7 +66,6 @@ func _process(delta):
 		canShoot = false
 		$ShootReloadTimer.start()
 		shoot.emit(selectedShootPos.global_position, shootDirection)
-	
 
 # Reload canShoot
 func _on_shoot_reload_timer_timeout():
