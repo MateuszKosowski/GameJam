@@ -53,7 +53,6 @@ func _process(delta):
 		canShoot = false
 		$ShootReloadTimer.start()
 		shoot.emit(selectedShootPos.global_position, shootDirection)
-		$AudioStreamPlayer2D.play()
 			
 	if Input.is_action_pressed("charge") and not charging_active:
 		$ChargingTime.start()
