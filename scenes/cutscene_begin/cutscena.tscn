@@ -7,10 +7,6 @@
 [sub_resource type="GDScript" id="GDScript_imgtt"]
 script/source = "extends Node2D
 
-#var level_game = preload (\"res://scenes/level/level.tscn\").instance()
-#get_tree().get_root().add_child(level_game)
-#get_tree().change_scene(\"res://scenes/level/level.tscn\")
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$ChangeScenesTimer.start()
@@ -354,6 +350,7 @@ offset_top = 653.0
 offset_right = 1533.0
 offset_bottom = 854.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_sgk8a")
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
 layout_mode = 0
@@ -364,6 +361,7 @@ offset_bottom = 121.0
 theme_override_fonts/normal_font = ExtResource("4_n4ogk")
 theme_override_font_sizes/normal_font_size = 25
 text = "HELLO EXORCIST,"
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Panel"]
 layout_mode = 0
@@ -373,7 +371,8 @@ offset_right = 1172.0
 offset_bottom = 154.0
 theme_override_fonts/normal_font = ExtResource("4_n4ogk")
 theme_override_font_sizes/normal_font_size = 25
-text = "YOU HAVE TO EXTERMINATE ALL THE UNDEAD, BUT..."
+text = "YOUR MISSION IS TO EXTERMINATE ALL BAD GHOSTS IN THE AREA."
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="Panel"]
 layout_mode = 0
@@ -383,7 +382,8 @@ offset_right = 1172.0
 offset_bottom = 187.0
 theme_override_fonts/normal_font = ExtResource("4_n4ogk")
 theme_override_font_sizes/normal_font_size = 25
-text = "IT'S TOO DANGEROUS TO GO ALONE!  HERE... TAKE THIS."
+text = "HERE... THESE WEAPONS MIGHT USEFULL."
+metadata/_edit_use_anchors_ = true
 
 [node name="Text1" type="Panel" parent="Panel"]
 layout_mode = 0
@@ -392,6 +392,7 @@ offset_top = 2.0
 offset_right = 927.0
 offset_bottom = 42.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_keuug")
+metadata/_edit_use_anchors_ = true
 
 [node name="Text2" type="Panel" parent="Panel"]
 layout_mode = 0
@@ -400,6 +401,7 @@ offset_top = 41.0
 offset_right = 927.0
 offset_bottom = 68.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_keuug")
+metadata/_edit_use_anchors_ = true
 
 [node name="Text3" type="Panel" parent="Panel"]
 layout_mode = 0
@@ -408,16 +410,4 @@ offset_top = 69.0
 offset_right = 927.0
 offset_bottom = 96.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_keuug")
-
-[node name="ChangeScenesTimer" type="Timer" parent="."]
-wait_time = 5.5
-
-[node name="black_fade" type="Sprite2D" parent="."]
-visible = false
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(1, 1, 1, 0)
-position = Vector2(642.5, 367.5)
-scale = Vector2(1339, 785)
-texture = SubResource("CanvasTexture_ogu11")
-
-[connection signal="timeout" from="ChangeScenesTimer" to="." method="_on_change_scenes_timer_timeout"]
+metadata/_edit_use_anchors_ = true
