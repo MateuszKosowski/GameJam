@@ -1,15 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvls27idluob1"]
+[gd_scene load_steps=5 format=3 uid="uid://577mbnl1neck"]
 
-[ext_resource type="Script" path="res://scenes/bullet/bullet.gd" id="1_u222v"]
-[ext_resource type="Texture2D" uid="uid://c603vl0sbxibr" path="res://graphics/circle.png" id="2_6cwvc"]
-[ext_resource type="Texture2D" uid="uid://bxqlls8126dya" path="res://graphics/magicBallBlack.png" id="2_rl8tr"]
+[ext_resource type="Script" path="res://scenes/bullet/bullet.gd" id="1_2f41f"]
+[ext_resource type="Texture2D" uid="uid://bxqlls8126dya" path="res://graphics/magicBallBlack.png" id="2_1lyju"]
+[ext_resource type="Texture2D" uid="uid://c603vl0sbxibr" path="res://graphics/circle.png" id="3_fy3kj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_66cod"]
 radius = 8.24621
 
 [node name="Bullet" type="Area2D"]
-collision_mask = 5
-script = ExtResource("1_u222v")
+collision_mask = 3
+script = ExtResource("1_2f41f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_66cod")
@@ -18,13 +18,13 @@ shape = SubResource("CircleShape2D_66cod")
 z_index = 5
 position = Vector2(-1, 0)
 scale = Vector2(0.02, 0.02)
-texture = ExtResource("2_rl8tr")
+texture = ExtResource("2_1lyju")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(1, 0)
 scale = Vector2(1.775, 1.775)
 energy = 1.43
-texture = ExtResource("2_6cwvc")
+texture = ExtResource("3_fy3kj")
 texture_scale = 0.1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
