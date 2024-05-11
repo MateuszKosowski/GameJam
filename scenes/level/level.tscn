@@ -3,14 +3,13 @@
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_avm3s"]
 [ext_resource type="PackedScene" uid="uid://bn7n3h61efd5g" path="res://scenes/player/player.tscn" id="2_3j6en"]
 [ext_resource type="Texture2D" uid="uid://c603vl0sbxibr" path="res://graphics/circle.png" id="4_86j28"]
-[ext_resource type="PackedScene" uid="uid://b0d74bhrtr4nf" path="res://scenes/tilemap/tile_map.tscn" id="4_eklwn"]
+[ext_resource type="PackedScene" uid="uid://dm3qbnnc28gw5" path="res://scenes/tilemap/tile_map.tscn" id="4_eklwn"]
 [ext_resource type="PackedScene" uid="uid://d21uspc35d462" path="res://scenes/enemy/enemy1.tscn" id="5_xo137"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_avm3s")
 
 [node name="Player" parent="." instance=ExtResource("2_3j6en")]
-z_index = 5
 position = Vector2(522, 284)
 
 [node name="PointLight2D" type="PointLight2D" parent="Player"]
@@ -32,16 +31,17 @@ blend_mode = 1
 [node name="RemoveBullet" type="Timer" parent="."]
 one_shot = true
 
-[node name="Player2" parent="." instance=ExtResource("5_xo137")]
-position = Vector2(989, 270)
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2(-1182, 387)
+scale = Vector2(2, 2)
 
 [node name="TileMap" parent="." instance=ExtResource("4_eklwn")]
 position = Vector2(-1182, 387)
 scale = Vector2(2, 2)
 
-[node name="Node2D2" type="Node2D" parent="."]
-position = Vector2(-1182, 387)
-scale = Vector2(2, 2)
+[node name="enemy" parent="." instance=ExtResource("5_xo137")]
+position = Vector2(423, -204)
 
 [connection signal="shoot" from="Player" to="." method="_on_player_shoot"]
 [connection signal="timeout" from="RemoveBullet" to="." method="_on_remove_bullet_timeout"]
+[connection signal="shoot" from="enemy" to="." method="_on_enemy_shoot"]
