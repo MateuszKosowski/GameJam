@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://d23tong3hqic1" path="res://graphics/priest/priest_left_cross3.PNG" id="7_ei65i"]
 [ext_resource type="Texture2D" uid="uid://dd33xv3orvk32" path="res://graphics/white_sphere_1.png" id="8_ndyh3"]
 [ext_resource type="Texture2D" uid="uid://c603vl0sbxibr" path="res://graphics/circle.png" id="9_5xknr"]
-[ext_resource type="PackedScene" path="res://scenes/ui/hp.tscn" id="10_n5wqj"]
-[ext_resource type="PackedScene" path="res://scenes/ui/progressbar.tscn" id="11_1bdin"]
+[ext_resource type="PackedScene" uid="uid://c01ahsc825iai" path="res://scenes/ui/hp.tscn" id="10_n5wqj"]
+[ext_resource type="PackedScene" uid="uid://mhaq835gwg4v" path="res://scenes/ui/progressbar.tscn" id="11_1bdin"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_26k4m"]
 radius = 264.0
@@ -138,9 +138,11 @@ limit_bottom = 772
 position_smoothing_enabled = true
 
 [node name="UI" parent="Camera2D" instance=ExtResource("10_n5wqj")]
+z_index = 2
 position = Vector2(0, -1120)
 
 [node name="Progressbar" parent="Camera2D" instance=ExtResource("11_1bdin")]
+z_index = 2
 position = Vector2(0, 739.999)
 scale = Vector2(4, 4)
 

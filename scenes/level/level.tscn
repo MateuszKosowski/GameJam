@@ -12,7 +12,6 @@ script = ExtResource("1_avm3s")
 position = Vector2(522, 284)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-energy = 0.9
 blend_mode = 1
 
 [node name="Bullets" type="Node2D" parent="."]
