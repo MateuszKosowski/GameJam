@@ -55,16 +55,8 @@ script = ExtResource("3_3kvcm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectionZone"]
 shape = SubResource("CircleShape2D_e2lu6")
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-path_max_distance = 1000.0
-
-[node name="PathfindingTimer" type="Timer" parent="."]
-wait_time = 0.1
-autostart = true
-
 [connection signal="timeout" from="ShootReloadTimer" to="." method="_on_shoot_reload_timer_timeout"]
 [connection signal="timeout" from="ShootReloadTimer" to="PlayerDetectionZone" method="_on_shoot_reload_timer_timeout"]
 [connection signal="body_entered" from="PlayerDetectionZone" to="." method="_on_player_detection_zone_body_entered"]
 [connection signal="body_entered" from="PlayerDetectionZone" to="PlayerDetectionZone" method="_on_body_entered"]
 [connection signal="shoot" from="PlayerDetectionZone" to="." method="_on_player_detection_zone_shoot"]
-[connection signal="timeout" from="PathfindingTimer" to="." method="_on_pathfinding_timer_timeout"]
