@@ -24,6 +24,7 @@ zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 energy = 0.9
 blend_mode = 1
 
@@ -36,9 +37,8 @@ one_shot = true
 position = Vector2(-1182, 387)
 scale = Vector2(2, 2)
 
-[node name="TileMap" parent="." instance=ExtResource("4_eklwn")]
-position = Vector2(-1182, 387)
-scale = Vector2(2, 2)
+[node name="TileMap" parent="Node2D2" instance=ExtResource("4_eklwn")]
+position = Vector2(275, 81.5)
 
 [node name="enemy" parent="." instance=ExtResource("5_xo137")]
 position = Vector2(423, -204)
