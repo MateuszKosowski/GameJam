@@ -1,62 +1,74 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvgiysdf3cmeg"]
+[gd_scene load_steps=4 format=3 uid="uid://cvgiysdf3cmeg"]
 
-[ext_resource type="Texture2D" uid="uid://pkiqfc3wrdvf" path="res://graphics/deathscreen.png" id="1_aentj"]
 [ext_resource type="Script" path="res://scenes/deathscreen/deathscreen.gd" id="1_eywsg"]
+[ext_resource type="FontFile" uid="uid://cmqdsxfon1ifi" path="res://fonts/EightBitDragon-anqx.ttf" id="3_fhn72"]
 
-[sub_resource type="Animation" id="Animation_i5si8"]
-resource_name = "fade"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
+[sub_resource type="CanvasTexture" id="CanvasTexture_rb74b"]
+specular_color = Color(0, 0, 0, 1)
 
-[sub_resource type="Animation" id="Animation_rgsla"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_i8hcw"]
-_data = {
-"RESET": SubResource("Animation_rgsla"),
-"fade": SubResource("Animation_i5si8")
-}
-
-[node name="Node2D" type="Node2D"]
-
-[node name="cutscena" type="Node2D" parent="."]
+[node name="deathscreen" type="Node2D"]
 script = ExtResource("1_eywsg")
 
-[node name="ColorRect" type="ColorRect" parent="cutscena"]
-offset_left = -30.0
-offset_top = -30.0
-offset_right = 1386.0
-offset_bottom = 789.0
-color = Color(0, 0, 0, 1)
+[node name="backgroundd" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(729.5, 357.5)
+scale = Vector2(1545, 767)
+texture = SubResource("CanvasTexture_rb74b")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="cutscena"]
-libraries = {
-"": SubResource("AnimationLibrary_i8hcw")
-}
+[node name="GameOver" type="RichTextLabel" parent="."]
+offset_left = 290.0
+offset_top = 155.0
+offset_right = 1424.0
+offset_bottom = 258.0
+theme_override_fonts/normal_font = ExtResource("3_fhn72")
+theme_override_font_sizes/normal_font_size = 120
+text = "GAME OVER?"
+metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="cutscena"]
-z_index = -1
-position = Vector2(647, 387)
-texture = ExtResource("1_aentj")
+[node name="button_no" type="Button" parent="."]
+offset_left = 236.0
+offset_top = 542.0
+offset_right = 564.0
+offset_bottom = 649.0
+
+[node name="text_no" type="RichTextLabel" parent="button_no"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.579268
+anchor_top = -1.1215
+anchor_right = -0.579268
+anchor_bottom = -1.1215
+offset_left = 318.0
+offset_top = 154.0
+offset_right = 1452.0
+offset_bottom = 257.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_fhn72")
+theme_override_font_sizes/normal_font_size = 45
+text = "NO"
+
+[node name="button_yes" type="Button" parent="."]
+offset_left = 836.0
+offset_top = 542.0
+offset_right = 1164.0
+offset_bottom = 649.0
+
+[node name="text_yes" type="RichTextLabel" parent="button_yes"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.634146
+anchor_top = -1.14953
+anchor_right = -0.634146
+anchor_bottom = -1.14953
+offset_left = 323.0
+offset_top = 154.0
+offset_right = 1457.0
+offset_bottom = 257.0
+theme_override_fonts/normal_font = ExtResource("3_fhn72")
+theme_override_font_sizes/normal_font_size = 45
+text = "YES"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="button_no" to="." method="_on_button_no_pressed"]
+[connection signal="pressed" from="button_yes" to="." method="_on_button_yes_pressed"]
