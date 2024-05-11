@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bxqlls8126dya" path="res://graphics/magicBallBlack.png" id="2_rl8tr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_66cod"]
-radius = 1.0
+radius = 8.24621
 
 [node name="Bullet" type="Area2D"]
 script = ExtResource("1_u222v")
