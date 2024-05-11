@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c01ahsc825iai" path="res://scenes/ui/hp.tscn" id="10_n5wqj"]
 [ext_resource type="PackedScene" uid="uid://mhaq835gwg4v" path="res://scenes/ui/progressbar.tscn" id="11_1bdin"]
 [ext_resource type="AudioStream" uid="uid://dq0d75d8diyov" path="res://audio/SFX_Shoot06.ogg" id="12_gh82p"]
+[ext_resource type="PackedScene" uid="uid://dprxhvtiq55cm" path="res://scenes/ui/reload_bar.tscn" id="12_bp53j"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_26k4m"]
 radius = 264.0
@@ -147,12 +148,18 @@ position = Vector2(0, -1120)
 position = Vector2(0, 739.999)
 scale = Vector2(4, 4)
 
+[node name="ReloadBar" parent="Camera2D" instance=ExtResource("12_bp53j")]
+position = Vector2(960, 19.9995)
+
 [node name="DeathByShadowTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_gh82p")
+
+[node name="ReloadBarTimer" type="Timer" parent="."]
+wait_time = 0.05
 
 [connection signal="timeout" from="ShootReloadTimer" to="." method="_on_shoot_reload_timer_timeout"]
 [connection signal="timeout" from="ChargingTime" to="." method="_on_charging_time_timeout"]
