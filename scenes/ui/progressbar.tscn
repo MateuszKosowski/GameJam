@@ -44,6 +44,7 @@ animations = [{
 [node name="Progressbar" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 15
 sprite_frames = SubResource("SpriteFrames_eqrv8")
 frame_progress = 0.665646
 

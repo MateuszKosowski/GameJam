@@ -64,7 +64,12 @@ func _process(delta):
 		get_tree().create_tween().tween_property($PointLight2D2,"texture_scale", 0, 20)
 	else:
 		get_tree().create_tween().tween_property($PointLight2D2,"texture_scale", 20, 1.5)
-		
+	if $PointLight2D2.get_texture_scale() <= 3:
+		get_tree().create_tween().tween_property($PointLight2D2,"texture_scale", 0, 0.1)
+		if $DeathByShadowTimer.is_stopped():
+			$DeathByShadowTimer.start()
+			
+			
 # Reload canShoot
 func _on_shoot_reload_timer_timeout():
 	canShoot = true
@@ -87,3 +92,9 @@ func _on_charging_time_timeout():
 
 func _on_radius_active_timer_timeout():
 	print("active timeout")
+
+
+func _on_death_by_shadow_timer_timeout():
+	hp -= 1
+	$Camera2D/UI/AnimatedSprite2D.frame += 1		
+	pass # Replace with function body.
