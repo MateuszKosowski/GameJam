@@ -1,14 +1,21 @@
 [gd_scene load_steps=2 format=3 uid="uid://dprxhvtiq55cm"]
 
-[ext_resource type="Texture2D" path="res://graphics/Ski_trail_rating_symbol_black_circle - Copy.png" id="2_2qu8k"]
+[ext_resource type="Texture2D" uid="uid://dd33xv3orvk32" path="res://graphics/white_sphere_1.png" id="1_j1nvq"]
 
 [node name="ReloadBar" type="Node2D"]
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-offset_left = -30.0
-offset_top = -30.0
-offset_right = 570.0
-offset_bottom = 570.0
+z_index = 5
+offset_left = -176.0
+offset_top = -172.0
+offset_right = 524.0
+offset_bottom = 528.0
 scale = Vector2(0.5, 0.5)
+value = 100.0
 fill_mode = 4
-texture_progress = ExtResource("2_2qu8k")
+texture_progress = ExtResource("1_j1nvq")
+
+[node name="PointLight2D" type="PointLight2D" parent="TextureProgressBar"]
+position = Vector2(352, 372)
+energy = 0.53
+texture = ExtResource("1_j1nvq")

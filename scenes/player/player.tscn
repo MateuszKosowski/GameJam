@@ -149,7 +149,8 @@ position = Vector2(3.8147e-06, 880)
 scale = Vector2(4, 4)
 
 [node name="ReloadBar" parent="Camera2D" instance=ExtResource("12_fhhki")]
-position = Vector2(720, -20.0005)
+z_index = 5
+position = Vector2(860, -80.0005)
 
 [node name="DeathByShadowTimer" type="Timer" parent="."]
 wait_time = 2.0
