@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://p4hay8iuhe2"
-path="res://.godot/imported/background_gener1.jpg-f5e7e60ebdcc69cb62f0eac9ab5eaf11.ctex"
+uid="uid://4whgpla6yhd3"
+path="res://.godot/imported/Cacodaemon Sprite Sheet.png-e35e0a84265ac2b5942f4f70b48e84b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/background_gener1.jpg"
-dest_files=["res://.godot/imported/background_gener1.jpg-f5e7e60ebdcc69cb62f0eac9ab5eaf11.ctex"]
+source_file="res://graphics/Cacodaemon Sprite Sheet.png"
+dest_files=["res://.godot/imported/Cacodaemon Sprite Sheet.png-e35e0a84265ac2b5942f4f70b48e84b4.ctex"]
 
 [params]
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bygi8xi6bv4y2"]
+[gd_scene load_steps=6 format=3 uid="uid://bygi8xi6bv4y2"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_avm3s"]
 [ext_resource type="PackedScene" uid="uid://bn7n3h61efd5g" path="res://scenes/player/player.tscn" id="2_3j6en"]
 [ext_resource type="PackedScene" uid="uid://dm3qbnnc28gw5" path="res://scenes/tilemap/tile_map.tscn" id="4_eklwn"]
+[ext_resource type="PackedScene" uid="uid://dllyegxmqljqn" path="res://scenes/enemy2/enemy_2.tscn" id="5_jxlbl"]
 [ext_resource type="PackedScene" uid="uid://d21uspc35d462" path="res://scenes/enemy/enemy1.tscn" id="5_xo137"]
 
 [node name="Level" type="Node2D"]
@@ -12,6 +13,7 @@ script = ExtResource("1_avm3s")
 position = Vector2(522, 284)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 energy = 0.9
 blend_mode = 1
 
@@ -32,6 +34,10 @@ scale = Vector2(2, 2)
 position = Vector2(423, -204)
 motion_mode = 1
 player = NodePath("../Player")
+
+[node name="enemy2" parent="." instance=ExtResource("5_jxlbl")]
+position = Vector2(918, 25)
+scale = Vector2(2.5, 2.5)
 
 [connection signal="shoot" from="Player" to="." method="_on_player_shoot"]
 [connection signal="timeout" from="RemoveBullet" to="." method="_on_remove_bullet_timeout"]
