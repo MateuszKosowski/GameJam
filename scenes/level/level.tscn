@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_avm3s"]
 [ext_resource type="PackedScene" uid="uid://bn7n3h61efd5g" path="res://scenes/player/player.tscn" id="2_3j6en"]
-[ext_resource type="PackedScene" uid="uid://b0d74bhrtr4nf" path="res://scenes/tilemap/tile_map.tscn" id="4_eklwn"]
+[ext_resource type="PackedScene" uid="uid://dm3qbnnc28gw5" path="res://scenes/tilemap/tile_map.tscn" id="4_eklwn"]
 [ext_resource type="PackedScene" uid="uid://d21uspc35d462" path="res://scenes/enemy/enemy1.tscn" id="5_xo137"]
 
 [node name="Level" type="Node2D"]
@@ -11,12 +11,8 @@ script = ExtResource("1_avm3s")
 [node name="Player" parent="." instance=ExtResource("2_3j6en")]
 position = Vector2(522, 284)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(0, 0.000488281)
-zoom = Vector2(2, 2)
-position_smoothing_enabled = true
-
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 energy = 0.9
 blend_mode = 1
 
