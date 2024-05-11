@@ -1,28 +1,26 @@
-[gd_scene load_steps=15 format=3 uid="uid://cl6xhaf6us5r3"]
+[gd_scene load_steps=13 format=3 uid="uid://cl6xhaf6us5r3"]
 
-[ext_resource type="Texture2D" path="res://graphics/background_final_pope2.png" id="1_wb5m4"]
+[ext_resource type="Texture2D" uid="uid://cp0hkxvwttm3u" path="res://graphics/background_final_pope2.png" id="1_wb5m4"]
 [ext_resource type="Texture2D" uid="uid://c63sksw3axo" path="res://graphics/cross.png" id="3_2so18"]
 [ext_resource type="FontFile" uid="uid://cmqdsxfon1ifi" path="res://fonts/EightBitDragon-anqx.ttf" id="4_n4ogk"]
 
 [sub_resource type="GDScript" id="GDScript_imgtt"]
 script/source = "extends Node2D
 
+#var level_game = preload (\"res://scenes/level/level.tscn\").instance()
+#get_tree().get_root().add_child(level_game)
+#get_tree().change_scene(\"res://scenes/level/level.tscn\")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$ChangeScenesTimer.start()
+	
 	$AnimationPlayer.play(\"up_and_down\")
 	$AnimationPlayer2.play(\"animate_enter\")
 	$AnimationPlayer2.queue(\"text_animate\")
-	$AnimationPlayer2.queue(\"black_fade\")
-	#get_tree().create_tween().tween_property($black_fade, \"self_modulate.a\", 100, 5)
-	
-
-func _on_change_scenes_timer_timeout():
-	get_tree().change_scene_to_file(\"res://scenes/level/level.tscn\")
 "
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_uh8j4"]
-specular_color = Color(0, 0, 0, 1)
+specular_color = Color(0.984314, 0.992157, 0.988235, 1)
 
 [sub_resource type="Animation" id="Animation_4rqf7"]
 length = 0.001
@@ -122,18 +120,6 @@ tracks/7/keys = {
 "update": 0,
 "values": [Vector2(-27, 653)]
 }
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../black_fade:self_modulate")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_qf2jl"]
 resource_name = "animate_enter"
@@ -186,22 +172,6 @@ tracks/3/keys = {
 "values": [Vector2(34, 83)]
 }
 
-[sub_resource type="Animation" id="Animation_onauy"]
-resource_name = "black_fade"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../black_fade:self_modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_wol1w"]
 resource_name = "text_animate"
 length = 3.5
@@ -236,10 +206,10 @@ tracks/2/path = NodePath("../Panel/Text2:size")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.2, 2.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(1.2, 2.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(893, 33), Vector2(893, 33), Vector2(0, 33)]
+"values": [Vector2(893, 27), Vector2(0, 27)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -299,7 +269,6 @@ tracks/0/keys = {
 _data = {
 "RESET": SubResource("Animation_4rqf7"),
 "animate_enter": SubResource("Animation_qf2jl"),
-"black_fade": SubResource("Animation_onauy"),
 "text_animate": SubResource("Animation_wol1w"),
 "up_and_down": SubResource("Animation_oep2e")
 }
@@ -310,14 +279,12 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_keuug"]
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_ninsm"]
-
 [node name="cutscena" type="Node2D"]
 script = SubResource("GDScript_imgtt")
 
 [node name="backgroundd" type="Sprite2D" parent="."]
-position = Vector2(729.5, 357.5)
-scale = Vector2(1545, 767)
+position = Vector2(629.5, 357.5)
+scale = Vector2(1345, 767)
 texture = SubResource("CanvasTexture_uh8j4")
 
 [node name="pope" type="Sprite2D" parent="."]
@@ -345,10 +312,9 @@ texture = ExtResource("3_2so18")
 [node name="Panel" type="Panel" parent="."]
 offset_left = -27.0
 offset_top = 653.0
-offset_right = 1533.0
+offset_right = 1307.0
 offset_bottom = 854.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_sgk8a")
-metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
 layout_mode = 0
@@ -359,7 +325,6 @@ offset_bottom = 121.0
 theme_override_fonts/normal_font = ExtResource("4_n4ogk")
 theme_override_font_sizes/normal_font_size = 25
 text = "HELLO EXORCIST,"
-metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Panel"]
 layout_mode = 0
@@ -370,7 +335,6 @@ offset_bottom = 154.0
 theme_override_fonts/normal_font = ExtResource("4_n4ogk")
 theme_override_font_sizes/normal_font_size = 25
 text = "YOUR MISSION IS TO EXTERMINATE ALL BAD GHOSTS IN THE AREA."
-metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="Panel"]
 layout_mode = 0
@@ -380,8 +344,7 @@ offset_right = 1172.0
 offset_bottom = 187.0
 theme_override_fonts/normal_font = ExtResource("4_n4ogk")
 theme_override_font_sizes/normal_font_size = 25
-text = "HERE... THESE WEAPONS MIGHT USEFULL."
-metadata/_edit_use_anchors_ = true
+text = "HERE... THESE WEAPON MIGHT BE USEFULL."
 
 [node name="Text1" type="Panel" parent="Panel"]
 layout_mode = 0
@@ -390,7 +353,6 @@ offset_top = 2.0
 offset_right = 927.0
 offset_bottom = 42.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_keuug")
-metadata/_edit_use_anchors_ = true
 
 [node name="Text2" type="Panel" parent="Panel"]
 layout_mode = 0
@@ -399,7 +361,6 @@ offset_top = 41.0
 offset_right = 927.0
 offset_bottom = 68.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_keuug")
-metadata/_edit_use_anchors_ = true
 
 [node name="Text3" type="Panel" parent="Panel"]
 layout_mode = 0
@@ -408,15 +369,3 @@ offset_top = 69.0
 offset_right = 927.0
 offset_bottom = 96.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_keuug")
-metadata/_edit_use_anchors_ = true
-
-[node name="ChangeScenesTimer" type="Timer" parent="."]
-wait_time = 5.5
-
-[node name="black_fade" type="Sprite2D" parent="."]
-self_modulate = Color(1, 1, 1, 0)
-position = Vector2(758.5, 420)
-scale = Vector2(1689, 1004)
-texture = SubResource("CanvasTexture_ninsm")
-
-[connection signal="timeout" from="ChangeScenesTimer" to="." method="_on_change_scenes_timer_timeout"]
