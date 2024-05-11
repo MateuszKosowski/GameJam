@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/bullet/bullet.gd" id="1_u222v"]
 [ext_resource type="Texture2D" uid="uid://c603vl0sbxibr" path="res://graphics/circle.png" id="2_6cwvc"]
-[ext_resource type="Texture2D" uid="uid://bxqlls8126dya" path="res://graphics/magicBallBlack.png" id="2_rl8tr"]
+[ext_resource type="Texture2D" uid="uid://dd33xv3orvk32" path="res://graphics/white_sphere_1.png" id="2_cm6nw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_66cod"]
 radius = 8.24621
@@ -17,13 +17,12 @@ shape = SubResource("CircleShape2D_66cod")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 5
 position = Vector2(-1, 0)
-scale = Vector2(0.02, 0.02)
-texture = ExtResource("2_rl8tr")
+scale = Vector2(0.015, 0.015)
+texture = ExtResource("2_cm6nw")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(1, 0)
 scale = Vector2(1.775, 1.775)
-energy = 1.43
+energy = 3.0
 texture = ExtResource("2_6cwvc")
 texture_scale = 0.1
 

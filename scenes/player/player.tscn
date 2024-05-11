@@ -144,6 +144,7 @@ position_smoothing_enabled = true
 position = Vector2(0, -1120)
 
 [node name="Progressbar" parent="Camera2D" instance=ExtResource("11_1bdin")]
+visible = false
 position = Vector2(0, 739.999)
 scale = Vector2(4, 4)
 

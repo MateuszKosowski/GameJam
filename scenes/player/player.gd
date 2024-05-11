@@ -60,6 +60,7 @@ func _process(delta):
 		shoot.emit(selectedShootPos.global_position, shootDirection)
 			
 	if Input.is_action_pressed("charge") and not charging_active:
+		$Camera2D/Progressbar.visible = true
 		$ChargingTime.start()
 		charging_active = true
 		$GPUParticles2D.emitting=true
@@ -97,6 +98,7 @@ func handle_hit():
 	lose_hp()
 
 func _on_charging_time_timeout():
+	$Camera2D/Progressbar.visible = false
 	print("Charging Time over")
 	$GPUParticles2D.emitting=false
 	charging_active = false
