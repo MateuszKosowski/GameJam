@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bygi8xi6bv4y2"]
+[gd_scene load_steps=9 format=3 uid="uid://bygi8xi6bv4y2"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_avm3s"]
 [ext_resource type="PackedScene" uid="uid://bn7n3h61efd5g" path="res://scenes/player/player.tscn" id="2_3j6en"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://blphuq6acnyg" path="res://scenes/lantern/lantern.tscn" id="5_ixwxy"]
 [ext_resource type="PackedScene" uid="uid://d21uspc35d462" path="res://scenes/enemy/enemy1.tscn" id="5_xo137"]
 [ext_resource type="PackedScene" uid="uid://6682sfhsysfy" path="res://scenes/mob_spawner/mob_spawner.tscn" id="6_4hce8"]
+[ext_resource type="AudioStream" uid="uid://b3du4l331erf7" path="res://audio/background_gameplay.mp3" id="7_xrkfr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ekkrk"]
 
@@ -109,6 +110,10 @@ position = Vector2(1406, -1324)
 player = NodePath("../Player")
 
 [node name="Mobs" type="Node" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_xrkfr")
+volume_db = 10.0
 
 [connection signal="shoot" from="Player" to="." method="_on_player_shoot"]
 [connection signal="timeout" from="RemoveBullet" to="." method="_on_remove_bullet_timeout"]

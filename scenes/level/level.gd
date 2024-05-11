@@ -7,6 +7,9 @@ var nenemy_scane: PackedScene = preload("res://scenes/enemy/enemy1.tscn")
 var player_scane: PackedScene = preload("res://scenes/player/player.tscn")
 @export var player : Node2D
 
+func _ready():
+	$AudioStreamPlayer2D.play()
+
 func _on_player_shoot(bulletPosition, bulletDirection):
 	var bullet = bullet_scane.instantiate() as Area2D
 	bullet.position = bulletPosition
