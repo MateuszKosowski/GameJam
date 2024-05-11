@@ -53,7 +53,6 @@ scale = Vector2(4, 4)
 script = ExtResource("3_3kvcm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectionZone"]
-position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_e2lu6")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
