@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bn7n3h61efd5g"]
+[gd_scene load_steps=18 format=3 uid="uid://bn7n3h61efd5g"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_e4hbn"]
 [ext_resource type="Texture2D" uid="uid://1fq1xmd6bbni" path="res://graphics/priest/IMG_1951.PNG" id="2_k72v2"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c603vl0sbxibr" path="res://graphics/circle.png" id="9_5xknr"]
 [ext_resource type="PackedScene" uid="uid://c01ahsc825iai" path="res://scenes/ui/hp.tscn" id="10_n5wqj"]
 [ext_resource type="PackedScene" uid="uid://mhaq835gwg4v" path="res://scenes/ui/progressbar.tscn" id="11_1bdin"]
+[ext_resource type="PackedScene" uid="uid://dprxhvtiq55cm" path="res://scenes/ui/reload_bar.tscn" id="12_fhhki"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_26k4m"]
 radius = 264.0
@@ -143,14 +144,22 @@ position_smoothing_enabled = true
 position = Vector2(0, -1120)
 
 [node name="Progressbar" parent="Camera2D" instance=ExtResource("11_1bdin")]
-position = Vector2(0, 739.999)
+z_index = 5
+position = Vector2(3.8147e-06, 880)
 scale = Vector2(4, 4)
+
+[node name="ReloadBar" parent="Camera2D" instance=ExtResource("12_fhhki")]
+position = Vector2(720, -20.0005)
 
 [node name="DeathByShadowTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 
+[node name="ReloadBarTimer" type="Timer" parent="."]
+wait_time = 0.05
+
 [connection signal="timeout" from="ShootReloadTimer" to="." method="_on_shoot_reload_timer_timeout"]
 [connection signal="timeout" from="ChargingTime" to="." method="_on_charging_time_timeout"]
 [connection signal="timeout" from="RadiusActiveTimer" to="." method="_on_radius_active_timer_timeout"]
 [connection signal="timeout" from="DeathByShadowTimer" to="." method="_on_death_by_shadow_timer_timeout"]
+[connection signal="timeout" from="ReloadBarTimer" to="." method="_on_reload_bar_timer_timeout"]
