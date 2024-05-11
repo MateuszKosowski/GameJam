@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bygi8xi6bv4y2"]
+[gd_scene load_steps=8 format=3 uid="uid://bygi8xi6bv4y2"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_avm3s"]
 [ext_resource type="PackedScene" uid="uid://bn7n3h61efd5g" path="res://scenes/player/player.tscn" id="2_3j6en"]
 [ext_resource type="PackedScene" uid="uid://dm3qbnnc28gw5" path="res://scenes/tilemap/tile_map.tscn" id="4_eklwn"]
 [ext_resource type="PackedScene" uid="uid://blphuq6acnyg" path="res://scenes/lantern/lantern.tscn" id="5_ixwxy"]
 [ext_resource type="PackedScene" uid="uid://d21uspc35d462" path="res://scenes/enemy/enemy1.tscn" id="5_xo137"]
+[ext_resource type="PackedScene" uid="uid://6682sfhsysfy" path="res://scenes/mob_spawner/mob_spawner.tscn" id="6_4hce8"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ekkrk"]
 
@@ -15,7 +16,6 @@ script = ExtResource("1_avm3s")
 position = Vector2(421, 568)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
 blend_mode = 1
 
 [node name="Bullets" type="Node2D" parent="."]
@@ -66,6 +66,49 @@ position = Vector2(932, 302)
 [node name="lantern8" parent="." instance=ExtResource("5_ixwxy")]
 position = Vector2(-287, 312)
 
+[node name="mob_spawner" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_4hce8")]
+position = Vector2(-1037, 139)
+player = NodePath("../Player")
+
+[node name="mob_spawner2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_4hce8")]
+position = Vector2(-1024, -480)
+player = NodePath("../Player")
+
+[node name="mob_spawner3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_4hce8")]
+position = Vector2(1505, -72)
+player = NodePath("../Player")
+
+[node name="mob_spawner4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_4hce8")]
+position = Vector2(1766, -509)
+player = NodePath("../Player")
+
+[node name="mob_spawner5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_4hce8")]
+position = Vector2(1741, -1342)
+player = NodePath("../Player")
+
+[node name="mob_spawner6" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_4hce8")]
+position = Vector2(671, -1582)
+player = NodePath("../Player")
+
+[node name="mob_spawner7" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_4hce8")]
+position = Vector2(-535, -1212)
+player = NodePath("../Player")
+
+[node name="mob_spawner8" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_4hce8")]
+position = Vector2(1087, -486)
+player = NodePath("../Player")
+
+[node name="mob_spawner9" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_4hce8")]
+position = Vector2(-329, -503)
+player = NodePath("../Player")
+
+[node name="mob_spawner10" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_4hce8")]
+position = Vector2(1406, -1324)
+player = NodePath("../Player")
+
+[node name="Mobs" type="Node" parent="."]
+
 [connection signal="shoot" from="Player" to="." method="_on_player_shoot"]
 [connection signal="timeout" from="RemoveBullet" to="." method="_on_remove_bullet_timeout"]
 [connection signal="shoot" from="enemy" to="." method="_on_enemy_shoot"]
+[connection signal="spawnMob" from="mob_spawner" to="." method="_on_mob_spawner_spawn_mob"]
